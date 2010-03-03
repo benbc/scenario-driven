@@ -1,0 +1,19 @@
+Tags:
+Preconditions:
+Login:
+#"mary" logs in
+
+Balances:
+#she sees that her balance is "£2000"
+
+Payments:
+#she goes to the Make Payment page
+#she searches for "bt"
+#she selects the account
+#she enters an amount of "£32.21"
+#she sets the date to today
+#she makes the payment
+#she goes back to her homepage
+
+Balances:
+#she sees that her balance is "£1967.79"

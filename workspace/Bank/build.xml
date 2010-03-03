@@ -1,0 +1,130 @@
+<project name="BackToIT" default="build">
+
+    <!-- Properties -->
+    <property name="label" value="dev-build"/>
+
+    <property name="build.dir" value="${basedir}/build"/>
+    <property name="lib.dir" value="${basedir}/lib"/>
+
+    <property name="main.src.dir" value="${basedir}/src"/>
+    <property name="test.src.dir" value="${basedir}/test"/>
+    <property name="web.src.dir" value="${basedir}/web"/>
+
+    <property name="main.class.dir" value="${build.dir}/classes/src"/>
+    <property name="test.class.dir" value="${build.dir}/classes/test"/>
+    <property name="checkstyle.dir" value="${build.dir}/checkstyle"/>
+
+    <property name="test.dir" value="${build.dir}/test"/>
+    <property name="test.results.dir" value="${test.dir}/results"/>
+    <property name="test.report.dir" value="${test.dir}/report"/>
+
+    <property name="war.dir" value="${build.dir}/war"/>
+    <property name="war.file" value="${ant.project.name}.war"/>
+
+    <property name="checkstyle.suppressions.file" value="${basedir}/checkstyle/suppressions"/>
+    <property name="translation.severity" value="???"/>
+
+    <!-- Paths -->
+    <fileset id="lib.jars" dir="${lib.dir}">
+        <filename name="*.jar"/>
+        <filename name="*-javadoc.jar" negate="true"/>
+        <filename name="*-sources.jar" negate="true"/>
+        <filename name="jmock*.jar" negate="true"/>
+        <filename name="junit*.jar" negate="true"/>
+    </fileset>
+    <property refid="lib.jars" name="dependant.jars"/>
+
+    <path id="main.class.path">
+        <fileset refid="lib.jars"/>
+    </path>
+
+    <path id="test.class.path">
+        <path refid="main.class.path"/>
+        <pathelement location="${main.class.dir}"/>
+        <pathelement location="${lib.dir}/jmock-2.4.0.jar"/>
+        <pathelement location="${lib.dir}/jmock-junit3-2.4.0.jar"/>
+        <pathelement location="${lib.dir}/junit-4.1.jar"/>
+    </path>
+
+    <taskdef resource="checkstyletask.properties" classpath="${basedir}/checkstyle/checkstyle-all-4.4.jar"/>
+
+    <!-- Targets -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${main.class.dir}"/>
+        <javac classpathref="main.class.path" srcdir="${main.src.dir}" destdir="${main.class.dir}" encoding="ISO8859-1"/>
+
+        <mkdir dir="${test.class.dir}"/>
+        <javac classpathref="test.class.path" srcdir="${test.src.dir}" destdir="${test.class.dir}" encoding="ISO8859-1"/>
+    </target>
+
+    <target name="unit.test" depends="compile">
+        <mkdir dir="${test.results.dir}"/>
+        <mkdir dir="${test.report.dir}"/>
+
+        <junit showoutput="false" fork="true" forkmode="once" haltonerror="false" haltonfailure="false"
+            printsummary="true" failureproperty="tests.failed">
+            <classpath>
+                <path refid="test.class.path"/>
+                <pathelement location="${test.class.dir}"/>
+            </classpath>
+            <batchtest todir="${test.results.dir}">
+                <fileset dir="${test.class.dir}" includes="**/*Test.class"/>
+            </batchtest>
+            <formatter type="xml"/>
+        </junit>
+
+        <junitreport todir="${test.report.dir}">
+            <fileset dir="${test.results.dir}" includes="**/*.xml"/>
+            <report format="frames" todir="${test.report.dir}"/>
+        </junitreport>
+
+        <fail if="tests.failed" message="Tests failed. See ${test.report.dir} for more info."/>
+    </target>
+
+    <target name="package" depends="unit.test">
+        <mkdir dir="${war.dir}"/>
+        <war destfile="${war.dir}/${war.file}" basedir="${web.src.dir}"
+            webxml="${web.src.dir}/WEB-INF/web.xml">
+            <!-- Still too big, expect container to provide...
+            <lib refid="lib.jars"/>
+            -->
+            <classes dir="${main.class.dir}"/>
+            <manifest>
+                <attribute name="build-label" value="${label}"/>
+                <attribute name="dependant-jars" value="${dependant.jars}"/>
+            </manifest>
+        </war>
+    </target>
+
+    <target name="checkstyle">
+        <mkdir dir="${checkstyle.dir}/xml"/>
+        <mkdir dir="${checkstyle.dir}/html"/>
+
+        <checkstyle config="checkstyle/backtoit_checks.xml"
+            failureProperty="checkstyle.failure"
+            failOnViolation="false">
+            <formatter type="xml" tofile="${checkstyle.dir}/xml/checkstyle_report.xml"/>
+            <fileset dir="${main.src.dir}" includes="**/*.java"/>
+            <fileset dir="${test.src.dir}" includes="**/*.java"/>
+        </checkstyle>
+
+        <xslt destdir="${checkstyle.dir}/html" style="checkstyle/checkstyle-noframes.xsl"
+            in="${checkstyle.dir}/xml/checkstyle_report.xml"
+            out="${checkstyle.dir}/html/checkstyle.html"/>
+
+        <!--
+        <fail if="checkstyle.failure"/>
+        -->
+    </target>
+
+    <target name="build" depends="clean, package, checkstyle"/>
+
+    <target name="diag">
+        <echo message="dependant jars = ${dependant.jars}"/>
+    </target>
+
+</project>

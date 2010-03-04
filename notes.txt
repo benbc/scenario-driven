@@ -7,20 +7,22 @@ structure
    - what is sdd?
  - example
    - example process and application
-   - show app
    - show two scenarios
    - introduce new story
    - show where it affects scenarios
    - discuss things that don't go in the scenarios
-   - modify scenarios (show reuse of existing test code)
+   - walk through process for implementing
  - concerns
    - how to drive system
    - fixture code
    - design of underlying code
    - analysis/vision stuff
    - QA/Dev coordination
+   - technologies
  - more Twist stuff
    - sales pitch
+   - refactoring
+   - reuse and intellisense
    - drivers
    - recording
    - organizing scenarios
@@ -118,3 +120,4 @@ twist stuff to show
 
 new
  - first scenario: walking skeleton
+ - possibility of non-automated approach

@@ -1,0 +1,98 @@
+Example
+-------
+
+*Project*
+
+I'm going to talk through how scenario-driven development works in
+practice. I want to put that into a realistic context, so I'm going to
+describe an example project and explain how the team uses scenarios to
+frame their development process.
+
+First, let me introduce you to the team. This is Parvinder, the
+project manager; he spends a lot of time worrying and fiddling with
+spreadsheets -- we won't have much more to do with him. This is
+Bethany, the business analyst; she is responsible for understanding
+the customers' needs and turning them into words of one syllable that
+the rest of the team understand. This is Terrance, the tester; he
+helps Bethany write the acceptance criteria for the stories, helps the
+developers implement the stories and finally checks that everything is
+working properly -- it rather sounds like he does all the work. And
+these are Doreen, Delilah and Dave; as you will have guessed, they are
+the developers; they write code.
+
+The team are using an XP-ish agile process. They work closely with the
+customer (here's the customer, he's called Cesar) to understand what
+the application needs to do. These requirements are expressed as
+stories, which have a narrative and brief acceptance criteria. Much of
+the understanding of the stories is a shared, social understanding
+amongst the members of the team rather than being rigorously
+documented. The whole team is involved, to some extent, throughout the
+development process, collaborating and ensuring that everyone shares
+an understanding of where the application is headed.
+
+The application the team is working on is an online banking app. It
+allows the bank's customers to see their statements, make payments,
+all the usual sort of stuff.
+
+*Scenarios*
+
+As well as unit tests, and the odd integration test to check the
+interaction between their code and external systems, the team has a
+set of scenario tests which describe the main activities that the
+application supports. I'm going to show you a couple of their
+scenarios.
+
+The ownership of these scenarios is shared amongst the team. Bethany
+(the BA) is responsible for what the scenarios should be, that is to
+say for agreeing with Cesar (the customer) what activities the
+application supports and how the application will be used. Terrance
+decides exactly what the workflow of each scenario is and owns their
+textual description. Doreen, Delilah and Dave write the code that
+automate the scenarios.
+
+This is the "Olga Makes a One-Off Payment" scenario. It describes a
+customer, Olga, transferring the money from a savings account to her
+current account entering the payment details, submitting it and
+finally going back to their home page to see that her account has been
+debited. When this scenario is run it will, through the magic of code,
+get the application into the right state for the scenario, drive the
+application through the workflow and ensure that it behaves as
+expected.
+
+This context describes the necessary prerequisites for the scenario to
+run: the application is running, Olga is provisioned on the system and
+has enough money in her account to make the payment successfully.
+
+And here is another scenario: "Pierre Wonders Why He's So
+Poor". Pierre looks at the statement for his account, filters it to
+show out-goings only, gives a little moan of despair and then follows
+a link to find out about low-rate loans.
+
+There are several other scenarios, but not a huge number. Each one
+describes how the users of the system will carry out some important
+activity. The scenarios are aligned with those activities rather than
+with the functionality that they exercise. For example there isn't a
+"Transfers" scenario, although the ability to make transfers between
+accounts is an important feature of the system. But the scenarios are
+at a higher level than that -- they describe the motivations behind
+the application as well as how it works.
+
+The scenarios were roughly sketched out right at the beginning of the
+project, by Bethany and Cesar, before they drilled down into the
+features that would need to go into the application. They've been used
+to guide the whole team since then: to help define and prioritize
+features, to ensure the team shares an understanding of what the
+application is for and, through their embodiment as automated tests,
+to ensure that the application really does support the activities it
+has been designed for.
+
+So what happens when the team plays a new story? Here is the story
+they're working on now: "Stop account going overdrawn".
+
+  In order that I can control who I make loans to,
+  as a Bank Manager,
+  I want payments which would cause accounts to go over drawn to fail.
+
+(You understand that this is pretty early in the development off the
+application.)
+

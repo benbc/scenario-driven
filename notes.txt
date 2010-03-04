@@ -1,0 +1,120 @@
+structure
+ - intro
+   - two things to remember
+   - essence/projection
+   - premise: automated testing is good
+   - problems with automated acceptance testing
+   - what is sdd?
+ - example
+   - example process and application
+   - show app
+   - show two scenarios
+   - introduce new story
+   - show where it affects scenarios
+   - discuss things that don't go in the scenarios
+   - modify scenarios (show reuse of existing test code)
+ - concerns
+   - how to drive system
+   - fixture code
+   - design of underlying code
+   - analysis/vision stuff
+   - QA/Dev coordination
+ - more Twist stuff
+   - sales pitch
+   - drivers
+   - recording
+   - organizing scenarios
+ - outro
+   - twist
+   - acknowledgements
+   - sdd summary
+   - two things to remember
+
+technology possibilities
+ - hand-rolled
+ - fit
+ - twist
+ - cucumber
+
+projections of notional, abstract form of application
+ - code
+ - unit tests
+ - documentation
+ - marketing
+ - acceptance tests
+stories describe delta to abstract form
+
+what you leave out of your tests is as important as what you put in
+
+running example(s) - validation?
+
+collaboration in defining scenarios
+ - tools (e.g. twist, cucumber) can be used to help this
+ - or through discussion and just use code
+
+describe simplified agile process to hang examples off
+
+acknowledge influences
+ - nat and steve
+ - simon stewart
+ - dan bodart
+ - gitanjali
+ - ian cartwright
+ - ?
+
+software design
+ - layering
+ - model application
+ - set-up code
+   - needs to be very efficient
+   - declarative (and therefore intelligent)
+   - can cheat if necessary
+ - (nearly) all set-up in single test
+
+use scenarios to define whole process
+ - agree with business
+ - frame development of app in terms of elaboration of scenarios
+ - base scenarios on activities you want your software to support
+ - ba, testers, devs should all agree on scenarios and know which
+   scenarios a story affects
+
+scenario tests are just (yet another) projection
+they *may* be readable by analysts, business, but they aren't a
+requirements doc (not complete)
+
+pitfalls of acceptance testing
+ - too many
+ - slow
+ - hard to maintain
+ - fragile
+ - have to keep changing
+
+story mapping
+
+what level to control system at?
+ - end-to-end
+ - exercise integration points?
+ - use real transports?
+ - through UI?
+ - in/out of container?
+ - simulators
+
+tensions
+ - speed
+ - readability
+ - impression of application and what is important
+ - coverage
+ - completeness
+ - maintenance effort
+ - reliability
+
+??? how to deal with failing tests?
+
+twist stuff to show
+ - intellisense
+ - flag unimplemented steps
+ - refactoring (which?)
+ - incorporate recordings
+
+new
+ - first scenario: walking skeleton

@@ -5,3 +5,4 @@ workspace/BankScenarios/bin
 workspace/BankScenarios/.settings/
 bank/bin
 workspace/BankScenarios/logs/twist.log
+bank/logs/twist.log

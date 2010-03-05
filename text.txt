@@ -50,9 +50,9 @@ decides exactly what the workflow of each scenario is and owns their
 textual description. Doreen, Delilah and Dave write the code that
 automate the scenarios.
 
-This is the "Olga Makes a One-Off Payment" scenario. It describes a
-customer, Olga, transferring the money from a savings account to her
-current account entering the payment details, submitting it and
+This is the "Patricia Pays her Phone Bill" scenario. It describes a
+customer, Patricia, transferring the money from a savings account to
+her current account entering the payment details, submitting it and
 finally going back to their home page to see that her account has been
 debited. When this scenario is run it will, through the magic of code,
 get the application into the right state for the scenario, drive the
@@ -60,8 +60,8 @@ application through the workflow and ensure that it behaves as
 expected.
 
 This context describes the necessary prerequisites for the scenario to
-run: the application is running, Olga is provisioned on the system and
-has enough money in her account to make the payment successfully.
+run: the application is running, Patricia is provisioned on the system
+and has enough money in her account to make the payment successfully.
 
 And here is another scenario: "Pierre Wonders Why He's So
 Poor". Pierre looks at the statement for his account, filters it to
@@ -86,13 +86,77 @@ application is for and, through their embodiment as automated tests,
 to ensure that the application really does support the activities it
 has been designed for.
 
+*A story*
+
 So what happens when the team plays a new story? Here is the story
 they're working on now: "Stop account going overdrawn".
 
   In order that I can control who I make loans to,
   as a Bank Manager,
-  I want payments which would cause accounts to go over drawn to fail.
+  I want payments which would cause accounts to go overdrawn to fail.
 
 (You understand that this is pretty early in the development off the
 application.)
 
+So the system will support overdrafts, but they haven't been
+implemented yet. For now it is just going to deny attempts to make an
+account go overdrawn. Here are the acceptance criteria:
+
+* A payment that would make the account go overdrawn fails.
+* A message is displayed to the customer explaining what went wrong.
+* The customer stays on the payment page with the fields of the form
+  all filled in.
+* No money is taken out of the account.
+* A payment which leaves the account empty is successful.
+
+When this story is played, Terrance (the tester) needs to think about
+how it affects the scenarios. In the "Patricia Pays her Phone Bill"
+scenario, we saw Patricia transfer money into her current account in
+order to make the payment. Here's an opportunity to exercise this new
+functionality: Patricia can try to make the payment before there is
+enough money in her current account to do so.
+
+Note that we probably don't want to create a new failing payment
+scenario. There are two good reasons for this. Failing to make a
+payment probably isn't one of the activities that Cesar particularly
+wants to support. This is not to say that the functionality to stop
+people going overdrawn isn't important, it is, but isn't in itself a
+motivating force behind the system.
+
+There is another reason for keeping the number of scenarios small. In
+order that they are realistic tests of the whole system, they may need
+to be relatively slow. They may have to bring up servers, make network
+or database calls and so on. It is important to keep the tests as fast
+as is reasonably possible (and I'll talk about some techniques to help
+with that later), but they can't be edge-to-edge system tests and
+still remain as lightning fast as unit tests.
+
+So Terrence updates "Patricia pays her Phone Bill" to reflect the new
+functionality. A new section of the test sees Patricia trying to make
+the payment before she has transferred the money from her savings
+account. The payment fails and she sees a message explaining why.
+
+Note that this updated scenario doesn't reflect all the acceptance
+criteria on the story. This is one of the points where you have to be
+careful when deciding what to put into the scenarios (and this is one
+of the two main ideas that I want to pass on to you today -- that what
+you leave out of your tests is as important as what you put in). We
+don't test that no money has come out of the account; we don't check
+that the fields are all still filled in (we also don't have a test for
+the edge case of bringing the balance down to zero).
+
+This is not to say that these acceptance criteria will not have
+automated tests. They will, but those tests will be lower-level tests,
+maybe unit tests, targeted at the components of the system responsible
+for enforcing the behaviour. The main reason is that we don't want to
+clutter up the scenarios with details and edge cases. We want them to
+be a clear description of the intent of the system and the activities
+it supports.
+
+One thing people say about Test Driven Development is that "it's not
+about the tests", it's about the rigour of the process and the design
+that the tests drive out. In the same way you could say that Scenario
+Drive Development isn't about the tests, it's about the shared
+understanding of the system that they bring to the team. Obviously the
+automated tests that are a byproduct of both approaches are extremely
+valuable and we wouldn't want to be without them.

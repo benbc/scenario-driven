@@ -36,6 +36,7 @@ structure
 new
  - first scenario: walking skeleton
  - possibility of non-automated approach
+ - workflow vs actor layer
 
 technology possibilities
  - hand-rolled

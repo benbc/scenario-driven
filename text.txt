@@ -183,3 +183,58 @@ turn to Doreen, Delilah and Dave.
 
 *Implementing the story*
 
+Before we talk about the process for implementing the story, We need
+to stop and talk about how the test harness for the scenarios is
+structured. The approach I'm going to describe is roughly technology
+agnostic.
+
+The top layer is the scenarios themselves. They sit on top of a
+workflow layer which models the process of using the application. In
+our scenario when we see Patricia going to the payments page, this
+maps onto a method in a workflow. The workflow layer is an
+implementation of the concepts needed for defining the scenarios. It
+is written in terms of a application model; for a GUI application this
+is typically written as a number of page or screen objects, each one
+of which represents a single page in the application (or screen for a
+thick client). This page model captures how the user interacts with
+the pages and what the flow between them looks like. It hides the
+details of the code that we are using to drive the application. For
+example in a web application, the page objects have an interface
+written in terms of what the user sees (buttons clicked, fields filled
+in, links followed), whereas its implementation is written in terms of
+HTML elements and XPath expressions. This implementation will
+typically use a library designed for driving GUI apps, like Selenium,
+Watir, White or Abbot.
+
+Let's look at who has responsibility for these layers. Bethany (the
+business analyst) and Terrence are responsible for the contents of the
+scenario layer. Terrance can change the scenarios as he needs to. If
+his changes are already supported by the workflow layer then he's
+done. (Of course the tests will probably fail when they're changed,
+but the developers only have to concern themselves with the
+application code.)
+
+The implementation of the workflow layer in terms of the application
+model is also Terrence's domain. He cares that the application model
+is a faithful representation of how the application looks to a
+user. But he probably won't write this stuff himself; he'll pair on
+writing it with a developer (I think this is Delilah, they are hard to
+tell apart). Between them they will ensure that the code accurately
+models the application and that it is reasonably efficient and easy to
+implement in the layer below.
+
+After that it's developers all the way down. The developers own the
+code in the application layer and of course the application itself.
+
+So during the development of a story, Delilah first pairs with
+Terrence to fill in the code under the scenario, then she pairs with
+Dave to finish the test code. Finally they turn to the application
+code.
+
+Notice that as well as using the scenario to drive the functionality
+of the code that is being written, we are also using the test harness
+that underlies it to drive the details of the UI. For example we are
+writing XPath expressions in our page objects before we write the HTML
+that they will be querying. This forces us to consider testability at
+the application and UI level in the same way that TDD does at the
+object level.

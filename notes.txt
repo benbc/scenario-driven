@@ -19,6 +19,7 @@ structure
    - analysis/vision stuff
    - QA/Dev coordination
    - technologies
+   - dealing with failing scenarios
  - more Twist stuff
    - sales pitch
    - refactoring
@@ -31,6 +32,10 @@ structure
    - acknowledgements
    - sdd summary
    - two things to remember
+
+new
+ - first scenario: walking skeleton
+ - possibility of non-automated approach
 
 technology possibilities
  - hand-rolled
@@ -117,7 +122,3 @@ twist stuff to show
  - flag unimplemented steps
  - refactoring (which?)
  - incorporate recordings
-
-new
- - first scenario: walking skeleton
- - possibility of non-automated approach

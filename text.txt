@@ -109,6 +109,8 @@ account go overdrawn. Here are the acceptance criteria:
 * No money is taken out of the account.
 * A payment which leaves the account empty is successful.
 
+*Updating the scenarios*
+
 When this story is played, Terrance (the tester) needs to think about
 how it affects the scenarios. In the "Patricia Pays her Phone Bill"
 scenario, we saw Patricia transfer money into her current account in
@@ -160,3 +162,24 @@ Drive Development isn't about the tests, it's about the shared
 understanding of the system that they bring to the team. Obviously the
 automated tests that are a byproduct of both approaches are extremely
 valuable and we wouldn't want to be without them.
+
+Now one part of this scenario, where it checks for the message,
+is completely new. The message wasn't there before, so the code
+underlying the scenario won't yet support checking for its
+presence. That code needs to be written.
+
+I should point out that there is code underlying these scenarios. This
+is a screenshot from Twist, a tool produced by ThoughtWorks Studios
+which allows scenarios written in this way to be mapped directly onto
+code. More excitingly it is actually a refactoring IDE for tests. This
+scenario, and the underlying code, can be refactored just as you would
+refactor normal code. I'll talk more about Twist later and show it to
+you in action. I'll also talk about other technologies that can be
+used.
+
+So right now, in our story, this scenario *fails*. In fact it doesn't
+even compile. To get it compiling, and eventually passing, we need to
+turn to Doreen, Delilah and Dave.
+
+*Implementing the story*
+

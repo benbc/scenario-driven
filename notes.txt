@@ -39,6 +39,9 @@ new
  - possibility of non-automated approach
  - workflow vs actor layer
 
+todo
+ - other scenarios that the payment failure story does/doesn't affect
+
 technology possibilities
  - hand-rolled
  - fit

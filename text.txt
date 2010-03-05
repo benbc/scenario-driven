@@ -239,6 +239,87 @@ that they will be querying. This forces us to consider testability at
 the application and UI level in the same way that TDD does at the
 object level.
 
+Driving everything
+------------------
+
+I intend that the idea of driving development with scenarios should be
+taken very seriously and should start right at the beginning. I think
+that sketching out a candidate set of activities that the application
+will support should be pretty much the first piece of analysis that is
+carried out on a project. This set of activities, and the scenarios
+that illustrate them, act as a manifesto for the project. They enable
+the customers to clarify what they want from the application and
+provide a vision for the application which is shared amongst the team.
+
+The scenarios are not *just* *tests*. Their identity, purpose and flow
+should be familiar to everyone on the team; and the team, including
+the customer, should evolve them together during the project. They are
+the clearest, high-level, localized statement of what the application
+*is*.
+
+Any application has a notional, abstract form which captures what the
+application *is*, it's essence. Unfortunately this essence isn't
+written down anywhere where everyone can see it. Presumably it is this
+essence that vast requirements documents are supposed to capture, but
+of course they fail because, while they are long, they can't be
+correct and they can't adapt as we learn things during development.
+
+Instead of being able to point at the essence, it has to be taken on
+trust. I suspect that, if we could measure it, we would find that the
+extent to which the members of a team share a view of this essence
+(and the extent to which their view is clear and complete) is a strong
+indicator of the success of a project.
+
+We can't see the essence, but we can see *projections* of it into
+various media. Each of these projections is incomplete and distorted,
+because of the nature of the media into which it is made. When you
+project a three-dimension object into two-dimensional space in order
+to draw it, you make a decision about how to make the projection in
+order to best show what you want. But which ever projection you chose
+distorts the original object to some extent, misrepresents it and
+leaves out some details.
+
+The most obvious projection of an application's essence is the
+code. But while there may be a lot of it, it's not complete (it
+doesn't include the behaviour of the people who use the software, or
+the environment that it runs in). And there maybe so much of it that
+it isn't clear what the sum of the parts comes to.
+
+Other projections of the essence include the documentation, the unit
+tests, maybe even the marketing material. The complete set of
+implemented stories is another projection.
+
+An individual story can be seen as a delta to the essence. A
+well-written story steers clear of talking about the implementation;
+in a team where the UI design work is incorporated into the
+development it may even avoid too many details about the interface. So
+what it talks about is the essence. And when any member of the team
+reads the story they naturally project that essence into the medium
+that they are most familiar with. The UI designer sees how the flow of
+the UI needs to change to accommodate some new widget; the tester
+imagines the edge cases and interactions that need testing; the
+developers can see which modules in the code need to change; the
+technical writer knows immediately which sections of the documentation
+need to be updated.
+
+And of course the scenarios are just one more projection. But they are
+an interesting one. They are rather abstracted from the details of the
+implementation. They are a projection into a rather rarified medium
+which exists only to accommodate that project. And they are shared
+amongst the entire team, written in a language that everyone can
+understand. So perhaps the scenarios are the closest thing we have to
+a faithful projection of the essence (although of course we pay a
+price in the paucity of detail).
+
+The process of developing an application can be framed in terms of
+elaboration of the application's scenarios. The identity of the
+scenarios remains roughly constant during development, but their
+content evolves. That evolution, and the particular scenarios that are
+evolving, provide themes for the team during a project. "This
+iteration we are going to fill in the details of the recurring
+payments scenario." "This release focuses on improving the useability
+of the admin scenarios."
+
 Concerns
 --------
 
@@ -246,10 +327,6 @@ I now want to talk about some of the forces that are at play and
 decisions that need to be taken if you take a scenario-driven
 approach.
 
-
-
-analysis/vision
-shared vision -- back to essence/projection
 qa/dev coordination
 failing scenarios?
 driving points
@@ -286,4 +363,4 @@ that I was working on. I haven't been the same since.
 
 And as you will have spotted if you are familiar with them, the idea
 of scenarios that I presented is heavily influenced by Jeff Patton's
-story mapping concept.
+writing on story mapping.

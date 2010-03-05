@@ -38,6 +38,7 @@ new
  - first scenario: walking skeleton
  - possibility of non-automated approach
  - workflow vs actor layer
+ - definition: readable by everyone
 
 todo
  - other scenarios that the payment failure story does/doesn't affect
@@ -47,14 +48,6 @@ technology possibilities
  - fit
  - twist
  - cucumber
-
-projections of notional, abstract form of application
- - code
- - unit tests
- - documentation
- - marketing
- - acceptance tests
-stories describe delta to abstract form
 
 what you leave out of your tests is as important as what you put in
 
@@ -70,17 +63,6 @@ software design
    - declarative (and therefore intelligent)
    - can cheat if necessary
  - (nearly) all set-up in single test
-
-use scenarios to define whole process
- - agree with business
- - frame development of app in terms of elaboration of scenarios
- - base scenarios on activities you want your software to support
- - ba, testers, devs should all agree on scenarios and know which
-   scenarios a story affects
-
-scenario tests are just (yet another) projection
-they *may* be readable by analysts, business, but they aren't a
-requirements doc (not complete)
 
 pitfalls of acceptance testing
  - too many

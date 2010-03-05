@@ -307,9 +307,11 @@ an interesting one. They are rather abstracted from the details of the
 implementation. They are a projection into a rather rarified medium
 which exists only to accommodate that project. And they are shared
 amongst the entire team, written in a language that everyone can
-understand. So perhaps the scenarios are the closest thing we have to
-a faithful projection of the essence (although of course we pay a
-price in the paucity of detail).
+understand. When a new story is played, everyone should agree on the
+affect of it on the scenarios, rather than having their own private
+view. So perhaps the scenarios are the closest thing we have to a
+faithful projection of the essence (although of course we pay a price
+in the paucity of detail).
 
 The process of developing an application can be framed in terms of
 elaboration of the application's scenarios. The identity of the
@@ -327,7 +329,20 @@ I now want to talk about some of the forces that are at play and
 decisions that need to be taken if you take a scenario-driven
 approach.
 
-qa/dev coordination
+Earlier I described a close collaboration between testers and
+developers, pairing to write the code behind the scenarios. I would
+like to take that collaboration further and maintain it throughout the
+development of a story. I talked about leaving some aspects of the
+story's acceptance criteria to be tested by lower-level tests -- unit
+tests, integration tests. As well as pairing on the scenarios,
+developers and testers can pair on writing these tests, to give the
+tester confidence that the tests do what they need to. And as the
+story is implemented, piece by piece, the developers let the tester
+know what has been checked in, what should be working correctly (and
+that he can test) and what has not yet been implemented. This way, by
+the time the developers are finished (or a very short while after) the
+tester is finished with the story too.
+
 failing scenarios?
 driving points
 tech for scenarios

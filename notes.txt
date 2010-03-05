@@ -20,7 +20,7 @@ structure
    - QA/Dev coordination
    - technologies
    - dealing with failing scenarios
- - more Twist stuff
+ - Twist demo
    - sales pitch
    - refactoring
    - reuse and intellisense

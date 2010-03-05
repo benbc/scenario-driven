@@ -238,3 +238,16 @@ writing XPath expressions in our page objects before we write the HTML
 that they will be querying. This forces us to consider testability at
 the application and UI level in the same way that TDD does at the
 object level.
+
+Concerns
+--------
+
+analysis/vision
+shared vision -- back to essence/projection
+qa/dev coordination
+failing scenarios?
+driving points
+tech for scenarios
+design of harness
+ - fixture
+ - workflow vs actor

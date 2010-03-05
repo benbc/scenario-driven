@@ -25,8 +25,9 @@ structure
    - refactoring
    - reuse and intellisense
    - drivers
-   - recording
+   - recording implementations
    - organizing scenarios
+   - show unimplemented stuff
  - outro
    - twist
    - acknowledgements
@@ -54,21 +55,9 @@ stories describe delta to abstract form
 
 what you leave out of your tests is as important as what you put in
 
-running example(s) - validation?
-
 collaboration in defining scenarios
  - tools (e.g. twist, cucumber) can be used to help this
  - or through discussion and just use code
-
-describe simplified agile process to hang examples off
-
-acknowledge influences
- - nat and steve
- - simon stewart
- - dan bodart
- - gitanjali
- - ian cartwright
- - ?
 
 software design
  - layering
@@ -97,8 +86,6 @@ pitfalls of acceptance testing
  - fragile
  - have to keep changing
 
-story mapping
-
 what level to control system at?
  - end-to-end
  - exercise integration points?
@@ -115,11 +102,3 @@ tensions
  - completeness
  - maintenance effort
  - reliability
-
-??? how to deal with failing tests?
-
-twist stuff to show
- - intellisense
- - flag unimplemented steps
- - refactoring (which?)
- - incorporate recordings

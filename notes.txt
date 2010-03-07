@@ -40,29 +40,11 @@ new
  - workflow vs actor layer
  - definition: readable by everyone
 
-todo
- - other scenarios that the payment failure story does/doesn't affect
-
-technology possibilities
- - hand-rolled
- - fit
- - twist
- - cucumber
-
 what you leave out of your tests is as important as what you put in
 
 collaboration in defining scenarios
  - tools (e.g. twist, cucumber) can be used to help this
  - or through discussion and just use code
-
-software design
- - layering
- - model application
- - set-up code
-   - needs to be very efficient
-   - declarative (and therefore intelligent)
-   - can cheat if necessary
- - (nearly) all set-up in single test
 
 pitfalls of acceptance testing
  - too many
@@ -70,14 +52,6 @@ pitfalls of acceptance testing
  - hard to maintain
  - fragile
  - have to keep changing
-
-what level to control system at?
- - end-to-end
- - exercise integration points?
- - use real transports?
- - through UI?
- - in/out of container?
- - simulators
 
 tensions
  - speed

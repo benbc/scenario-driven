@@ -50,21 +50,49 @@ decides exactly what the workflow of each scenario is and owns their
 textual description. Doreen, Delilah and Dave write the code that
 automate the scenarios.
 
-This is the "Patricia Pays her Phone Bill" scenario. It describes a
-customer, Patricia, transferring the money from a savings account to
-her current account entering the payment details, submitting it and
-finally going back to their home page to see that her account has been
-debited. When this scenario is run it will, through the magic of code,
-get the application into the right state for the scenario, drive the
-application through the workflow and ensure that it behaves as
-expected.
+This is the "Patricia Pays Her Phone Bill" scenario.
+
+{ Patricia exists. }
+{ Patricia has £22 in her current account. }
+{ Patricia has at least £50 in her savings account. }
+{ The system is running. }
+  # Patricia goes to her home page.
+  # She transfers £50 from her savings account to her current account.
+  # She sees that her current account balance is £72.
+  # She goes to the payments page.
+  # She enters a payment of £48 to 12345678, sort code 12-12-12.
+  # She submits the payment.
+  # She goes to her home page.
+  # She sees that her current account balance is £24.
+
+It describes a customer, Patricia, transferring the money from a
+savings account to her current account entering the payment details,
+submitting it and finally going back to her home page to see that her
+account has been debited. When this scenario is run it will, through
+the magic of code, get the application into the right state for the
+scenario, drive the application through the workflow and ensure that
+it behaves as expected.
 
 This context describes the necessary prerequisites for the scenario to
 run: the application is running, Patricia is provisioned on the system
 and has enough money in her account to make the payment successfully.
 
-And here is another scenario: "Pierre Wonders Why He's So
-Poor". Pierre looks at the statement for his account, filters it to
+And here is another scenario: "Pierre Wonders Why He Is So
+Poor".
+
+{ Pierre exists. }
+{ Pierre has made 12 payments to Amazon. }
+{ Pierre has made a £132 payment to Sevilla Mia. }
+{ The system is running. }
+# Pierre goes to his home page.
+# Pierre looks at the statement for his current account.
+# Pierre examines his outgoings.
+# Pierre sees that his outgoings include a £132 payment to Sevilla
+  Mia.
+# Pierre sees that his outgoings include 12 payments to Amazon.
+# Pierre goes to the loan application page.
+
+Pierre looks at the statement for his account, filters it to
 show out-goings only, gives a little moan of despair and then follows
 a link to find out about low-rate loans.
 
@@ -117,6 +145,10 @@ scenario, we saw Patricia transfer money into her current account in
 order to make the payment. Here's an opportunity to exercise this new
 functionality: Patricia can try to make the payment before there is
 enough money in her current account to do so.
+
+But the story does not affect on the "Pierre Wonders Why He Is So Poor"
+scenario. (Although it does affect the "Pierre Tries To Save Up For A
+Car" scenario. Poor Pierre.)
 
 Note that we probably don't want to create a new failing payment
 scenario. There are two good reasons for this. Failing to make a

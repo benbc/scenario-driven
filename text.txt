@@ -257,18 +257,26 @@ the customer, should evolve them together during the project. They are
 the clearest, high-level, localized statement of what the application
 *is*.
 
+I want to take a slightly philosophical diversion now. I hope that
+you'll bear with me. I find this approach invaluable for appreciating
+the utility of scenarios (and incidentally for understanding all sorts
+of things that can go wrong with projects).
+
 Any application has a notional, abstract form which captures what the
 application *is*, it's essence. Unfortunately this essence isn't
 written down anywhere where everyone can see it. Presumably it is this
 essence that vast requirements documents are supposed to capture, but
 of course they fail because, while they are long, they can't be
-correct and they can't adapt as we learn things during development.
+correct and they can't adapt as we learn things during
+development. Instead of being able to point at the essence, it has to
+be taken on trust.
 
-Instead of being able to point at the essence, it has to be taken on
-trust. I suspect that, if we could measure it, we would find that the
-extent to which the members of a team share a view of this essence
-(and the extent to which their view is clear and complete) is a strong
-indicator of the success of a project.
+Parvinder and Bethany and Terrence and Doreen and Delilah and Dave and
+Cesar all have their own view of what this essence is, their own
+mental models of the applications. I suspect that, if we could measure
+it, we would find that the extent to which the members of a team share
+a view of this essence (and the extent to which their view is clear
+and complete) is a strong indicator of the success of a project.
 
 We can't see the essence, but we can see *projections* of it into
 various media. Each of these projections is incomplete and distorted,
@@ -279,15 +287,17 @@ order to best show what you want. But which ever projection you chose
 distorts the original object to some extent, misrepresents it and
 leaves out some details.
 
-The most obvious projection of an application's essence is the
-code. But while there may be a lot of it, it's not complete (it
-doesn't include the behaviour of the people who use the software, or
-the environment that it runs in). And there maybe so much of it that
-it isn't clear what the sum of the parts comes to.
+The most obvious projection of an application's essence is the code;
+this is the projection that is most obvious to Doreen and the other
+developers. But while there may be a lot of it, the code is not
+complete (it doesn't include the behaviour of the people who use the
+software, or the environment that it runs in). And there maybe so much
+of it that it isn't clear what the sum of the parts comes to.
 
-Other projections of the essence include the documentation, the unit
-tests, maybe even the marketing material. The complete set of
-implemented stories is another projection.
+All the team members have a greater or lesser familiarity with various
+other projections, which include the documentation, the unit tests,
+maybe even the marketing material. The complete set of implemented
+stories is another projection.
 
 An individual story can be seen as a delta to the essence. A
 well-written story steers clear of talking about the implementation;
@@ -296,7 +306,7 @@ development it may even avoid too many details about the interface. So
 what it talks about is the essence. And when any member of the team
 reads the story they naturally project that essence into the medium
 that they are most familiar with. The UI designer sees how the flow of
-the UI needs to change to accommodate some new widget; the tester
+the UI needs to change to accommodate some new widget; Terrence
 imagines the edge cases and interactions that need testing; the
 developers can see which modules in the code need to change; the
 technical writer knows immediately which sections of the documentation
@@ -343,7 +353,40 @@ that he can test) and what has not yet been implemented. This way, by
 the time the developers are finished (or a very short while after) the
 tester is finished with the story too.
 
-failing scenarios?
+Another issue concerning team collaboration is what to do with the
+scenarios that are affected by a story, while that story is under
+development. Usually when we have updated the scenarios to reflect the
+new story, they will fail. They probably won't be fixed until the
+story is nearly finished. This leaves the team in the awkward position
+of having test failing that they can't fix immediately. There will
+probably be more than one scenario failing at once.
+
+There are a number of possible approached to dealing with this (I
+discount leaving them to fail and having a permanently broken
+build). Of course the whole problem can be alleviated somewhat by
+always concentrating first, when developing a story, on the mainline
+functionality that is captured in the scenario and leaving till later
+the edge cases and error handling that aren't reflected in a
+scenario. I think this is a good idea anyway as it allows you to get
+more immediate feedback on the story, before it is finished, from
+testers and even from the business analyst and customer.
+
+You can mark "in progress" scenarios in some way, with a tag
+or by moving them to a different folders; the build is modified so
+that failing "in progress" scenarios don't fail the whole
+build. Having written the scenario at the start of a story's
+development and seen it fail in the way you expect, you could
+temporarily modify it to remove the failing assertion (for example by
+commenting it out).
+
+Or you could modify the scenario to assert that the expected failure
+happens. Although I haven't yet had a chance to try this, this is the
+solution that I prefer because it forces you to reverse the process at
+the end of story development -- suddenly you will find the scenario
+failing because the original assertion no longer fails; this approach
+also ensures that other errors causing the scenario to fail won't
+creep in because it is being temporarily ignored.
+
 driving points
 tech for scenarios
 design of harness

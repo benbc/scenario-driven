@@ -339,6 +339,8 @@ I now want to talk about some of the forces that are at play and
 decisions that need to be taken if you take a scenario-driven
 approach.
 
+*Collaboration*
+
 Earlier I described a close collaboration between testers and
 developers, pairing to write the code behind the scenarios. I would
 like to take that collaboration further and maintain it throughout the
@@ -387,11 +389,63 @@ failing because the original assertion no longer fails; this approach
 also ensures that other errors causing the scenario to fail won't
 creep in because it is being temporarily ignored.
 
-driving points
-tech for scenarios
-design of harness
- - fixture
- - workflow vs actor
+*Technical*
+
+The remaining concerns are technical.
+
+One major decision in any high-level test like these scenarios is how
+much of the system do we test. Should we drive the application through
+its user-interface, or should we call directly into the code? Should
+we include other applications? Should we stub out the network layer,
+or should we include external calls?
+
+There are no firm rules here. My general guidance is to test as much
+of the system as possible, with the following constraints. Your test
+should not include any systems that you don't control (for example no
+servers that are managed by another team); remove components that make
+the tests run slowly (for example application servers that take
+minutes to bring up and down); try to keep all of the components of
+your test system controllable from code in your test fixtures. If you
+are taking a component out of the tests, try to execute all of your
+code, right up to the edges (for example if you are stubbing out a
+system that you integrate with then write a simulator for it and
+interact with it over a realistic transport).
+
+Another decision that you have to make is what technology to use for
+writing your scenarios. In the example I showed you I used Twist,
+which is extremely well suited to this approach. Other possibilities
+that take a similar approach (although without the tool support) are
+FitNesse (where tests are defined in wiki pages) and Cucumber, a DSL
+designed for BDD-style testing. I have most frequently used plain old
+code with a standard unit testing framework, making an effort to
+ensure that the code is readable to non-developers, but generally
+requiring developers to make significant changes to it.
+
+The part of the code supporting the scenarios that often needs most
+attention, design and rework is the fixture code. The main workflow of
+the scenarios themselves drive the application as the user would, so
+the code to support that is a fairly simple model of the application's
+interface. But the fixture required to allow the scenarios to be run
+is often extensive: systems need to be running, users need to be
+provisioned, various state needs to be set up, authentication needs to
+be handled.
+
+It is almost always impractical to write this fixture code by driving
+the application through its standard interface. Doing so may be
+extremely slow and somewhat brittle as it introduces dependencies in
+every test on the common bits of the UI required for that
+setup. Instead this kind of fixture code should be allowed to "cheat"
+in whatever way is necessary to keep it lightning fast and avoid
+brittleness. The description of the fixture in the test is kept
+minimal and very declarative; the code underneath needs to be smart
+enough to work out what needs doing and an efficient way of doing it.
+
+I prefer to avoid canned seed data to be used as fixtures, except
+where that data is truly common (for example locale-specific data that
+would appear in the running application). And it makes individual
+scenarios clearer if *all* the fixture required for them to run is
+defined within the scenario itself, rather that being shared amongst
+scenarios (in the standard setup/teardown patter).
 
 Outro
 -----

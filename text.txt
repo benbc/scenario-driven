@@ -1,3 +1,98 @@
+Intro
+-----
+
+I'm going to talk today about Scenario-Driven
+Development. Scenario-Driven Development is an extension of
+Test-Driven Development to include the entire application, rather than
+just individual units of code, and the process of the entire team,
+rather than just developers' story implementation.
+
+I'm going to talk at length about the practice of implementing
+Scenario-Driven Design. Taken to the extremes that I advocate, it is a
+rather ambitious change to the way many team develop software. I hope
+to convince you that it is the correct approach, but I know that I may
+not succeed. However there are two points that I want to get make
+which are more generally applicable -- the Main Ideas that I really
+want you to remember from this talk. I shall flag them clearly as I go
+along.
+
+My premise for this talk is that automated testing is good. Over the
+last ten years there has been massive growth of developer automated
+unit testing which has brought huge benefits to the entire development
+process. The key to making the most of unit testing seems to be
+allowing it to drive the writing of the code: TDD. Lots of teams that
+I have been part of and heard of have tried to extend those benefits
+to higher-level testing: to functional or acceptance tests (in my
+experience terms for different types of testing are the source of much
+disagreement; my solution is to use a different name altogether).
+
+But those attempts have often been unsuccessful in the long term. My
+aim here is to codify what it is that can make such an attempt
+successful and how to avoid the pitfalls. The outcome of that
+codification is Scenario-Driven Development.
+
+Before we talk about how to do it, let's briefly touch on how not to
+do it. The poster-child for unsuccessful approaches to automated
+acceptance tests is the Story Test. In this approach each story that a
+team delivers is accompanied by a one or more tests; the tests are
+labelled as being associated with that story; each acceptance criteria
+of the story is automated (to the extent that is practical). I have
+never seen this approach succeed, although I have been desperate for
+it to do so. Not many years ago I could be heard loudly proclaiming
+the indispensability of such an approach on a large team which was
+struggling to find a way of automating testing; fortunately few people
+listened to me and the initiative died of natural causes.
+
+The natural result of this approach is that you end up with a very
+large number of tests. This large number has three problems. Each one
+of the tests has to be written, it has to be run and it has to be
+maintained.
+
+The process of writing the tests always takes longer than you expect
+it to; but this is the least of the problems. As the number of tests
+increases, so does the run time; however hard to try to speed them up,
+there are always more and more of them clogging up your build
+pipeline. And every time you change the application a whole swathe of
+the tests breaks. This is the real killer; however hard you try to
+localize necessary changes by factoring out setup code, by cleanly
+modelling the application in one place, they will fail
+unexpectedly. And debugging a failing test for a story that someone else
+implemented nine months ago, in a corner of the application that no one
+cares about any more is truly heart-breaking. So we give up.
+
+The natural antidote to these problems is to cut your tests along a
+different grain. Instead of aligning them with the historical accident
+of how the application was developed, you align them, more naturally,
+with the functionality of the application. You have a small suite of
+tests for each area of functionality. This is an improvement: it
+forces you to revisit the tests when a new story touches that area of
+functionality, so you have an opportunity to refactor them; it
+localizes breakages caused by changes to the way the application
+works; it makes the tests more discoverable.
+
+But there are still problems. You are still likely to end up with a
+lot of tests (with attendant speed problems). There is no obvious way
+to decide where to test a new bit of functionality; decisions on this
+are arbitrary and therefore likely to be inconsistent. People will
+tend to just add a new test rather than modifying existing ones, with
+a consequent slide back to one-test-per-story. And there is no
+alignment of the tests with the team's (and the customer's)
+understanding of the application.
+
+The solution to all these problems seems to be two-fold. Align the
+tests not with functionality, but with the activities that the
+application is designed to support. And be brutal in leaving things
+out of these tests, rather than trying to automate all acceptance criteria.
+
+TODO: define SDD
+
+change focus from testing to collaboration
+
+fast
+readable
+give the right impression of purpose of app
+robust in the face of changes to the app
+
 Example
 -------
 
@@ -173,7 +268,7 @@ account. The payment fails and she sees a message explaining why.
 Note that this updated scenario doesn't reflect all the acceptance
 criteria on the story. This is one of the points where you have to be
 careful when deciding what to put into the scenarios (and this is one
-of the two main ideas that I want to pass on to you today -- that what
+of the two Main Ideas that I want to pass on to you today -- that what
 you leave out of your tests is as important as what you put in). We
 don't test that no money has come out of the account; we don't check
 that the fields are all still filled in (we also don't have a test for
@@ -292,7 +387,8 @@ the clearest, high-level, localized statement of what the application
 I want to take a slightly philosophical diversion now. I hope that
 you'll bear with me. I find this approach invaluable for appreciating
 the utility of scenarios (and incidentally for understanding all sorts
-of things that can go wrong with projects).
+of things that can go wrong with projects). This analysis is the
+second Main Idea that I would like to you take from this talk.
 
 Any application has a notional, abstract form which captures what the
 application *is*, it's essence. Unfortunately this essence isn't
@@ -468,9 +564,11 @@ extremely slow and somewhat brittle as it introduces dependencies in
 every test on the common bits of the UI required for that
 setup. Instead this kind of fixture code should be allowed to "cheat"
 in whatever way is necessary to keep it lightning fast and avoid
-brittleness. The description of the fixture in the test is kept
-minimal and very declarative; the code underneath needs to be smart
-enough to work out what needs doing and an efficient way of doing it.
+brittleness. (This is an other example of my first Main Idea: what
+you leave out of the tests is crucial.) The description of the fixture
+in the test is kept minimal and very declarative; the code underneath
+needs to be smart enough to work out what needs doing and an efficient
+way of doing it.
 
 I prefer to avoid canned seed data to be used as fixtures, except
 where that data is truly common (for example locale-specific data that
@@ -479,8 +577,17 @@ scenarios clearer if *all* the fixture required for them to run is
 defined within the scenario itself, rather that being shared amongst
 scenarios (in the standard setup/teardown patter).
 
+Twist Demo
+----------
+
+TODO segue
+
+TODO script for demo
+
 Outro
 -----
+
+TODO summary
 
 *Acknowledgements*
 
@@ -488,22 +595,13 @@ I want to acknowledgement some of the people who have been most
 influential on my thinking in this area and point you in their
 direction to find out more.
 
+The approach of Scenario-Driven Development is very close to that of
+Behaviour-Driven Development, which was developed by Dan North, Chris
+Matts and others. I have been listening to what they say.
+
 Nat Pryce and Steve Freeman's book gives a better account of how to
 use tests to drive the coding process than I could hope to do. All
 developers should have read it.
-
-Simon Stewart taught me how to model the application in my tests. He
-also wrote WebDriver which is a great service to the human race.
-
-Dan Bodart made me understand what it really means to make an
-application testable.
-
-Gitanjali Venkatraman is the best tester I have ever worked with. A
-lot of my ideas about collaboration between testers and developers
-come from watching her work.
-
-Ian Cartwright once gave me a stern talking to about an application
-that I was working on. I haven't been the same since.
 
 And as you will have spotted if you are familiar with them, the idea
 of scenarios that I presented is heavily influenced by Jeff Patton's

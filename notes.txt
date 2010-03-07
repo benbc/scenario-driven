@@ -1,7 +1,6 @@
 structure
  - intro
    - two things to remember
-   - essence/projection
    - premise: automated testing is good
    - problems with automated acceptance testing
    - what is sdd?
@@ -40,18 +39,13 @@ new
  - workflow vs actor layer
  - definition: readable by everyone
 
-what you leave out of your tests is as important as what you put in
+todo
+ - insert refs to slides
+ - move acks to intro
 
 collaboration in defining scenarios
  - tools (e.g. twist, cucumber) can be used to help this
  - or through discussion and just use code
-
-pitfalls of acceptance testing
- - too many
- - slow
- - hard to maintain
- - fragile
- - have to keep changing
 
 tensions
  - speed
@@ -61,3 +55,19 @@ tensions
  - completeness
  - maintenance effort
  - reliability
+
+Old acks
+
+Simon Stewart taught me how to model the application in my tests. He
+also wrote WebDriver which is a great service to the human race.
+
+Dan Bodart made me understand what it really means to make an
+application testable.
+
+Gitanjali Venkatraman is the best tester I have ever worked with. A
+lot of my ideas about collaboration between testers and developers
+come from watching her work.
+
+Ian Cartwright once gave me a stern talking to about an application
+that I was working on. I haven't been the same since.
+

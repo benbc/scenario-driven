@@ -40,6 +40,7 @@ new
  - definition: readable by everyone
 
 todo
+ - refer to 'customer tests'
  - insert refs to slides
  - move acks to intro
 

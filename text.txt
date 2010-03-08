@@ -8,13 +8,13 @@ just individual units of code, and the process of the entire team,
 rather than just developers' story implementation.
 
 I'm going to talk at length about the practice of implementing
-Scenario-Driven Design. Taken to the extremes that I advocate, it is a
-rather ambitious change to the way many team develop software. I hope
-to convince you that it is the correct approach, but I know that I may
-not succeed. However there are two points that I want to get make
-which are more generally applicable -- the Main Ideas that I really
-want you to remember from this talk. I shall flag them clearly as I go
-along.
+Scenario-Driven Development. Taken to the extremes that I advocate, it
+is a rather ambitious change to the way many team develop software. I
+hope to convince you that it is the correct approach, but I know that
+I may not succeed. However there are two points that I want to get
+make which are more generally applicable -- the Main Ideas that I
+really want you to remember from this talk. I shall flag them clearly
+as I go along.
 
 My premise for this talk is that automated testing is good. Over the
 last ten years there has been massive growth of developer automated
@@ -79,26 +79,56 @@ a consequent slide back to one-test-per-story. And there is no
 alignment of the tests with the team's (and the customer's)
 understanding of the application.
 
-The solution to all these problems seems to be two-fold. Align the
-tests not with functionality, but with the activities that the
-application is designed to support. And be brutal in leaving things
+The solution to all these problems seems to be two-fold: align the
+tests not with functionality but with the activities that the
+application is designed to support; and be brutal in leaving things
 out of these tests, rather than trying to automate all acceptance criteria.
 
-TODO: define SDD
+So we express the tests as a number of scenarios. Each one
+encapsulates an activity that the application supports and asserts
+that it really does support that activity. The tests are written in
+the language of the user of the system, in terms of their interaction
+with the application and their experience of using it. Scenarios
+provide a solution to the problem of acceptance tests by boiling them
+down to a simple description of the most important aspects of the
+system, in a language that makes sense to the people who use it.
 
-change focus from testing to collaboration
+The technique of Scenario-Driven Development that I am advocating goes
+beyond that, though. I believe that in the same way we use unit tests
+in TDD to drive the design of the code, we should use scenarios to
+frame the development of the whole application. They become a tool for
+collaboration amongst the entire team and help shape a shared
+understanding within the team of what it is they are developing.
 
-fast
-readable
-give the right impression of purpose of app
-robust in the face of changes to the app
+In order to be successful in this role, the scenario tests have to
+have several properties. Their technical properties address the
+problems with automated testing that we discussed earlier: they need
+to be fast and they need to be robust in the face of changes to the
+application. More important, though, are their social properties.
+
+First they need to be readable. I would hope that every member of the
+team, including the customer, would be able to read the scenarios and
+agree that they make sense. This doesn't necessarily preclude the
+possibility of their being written in code: but if they are then the
+code must be extremely expressive and the customers must be prepared
+to put a bit of effort into learning to screen out the various braces
+and semicolons that litter the text.
+
+Second they must give the right impression. Reading the scenarios
+should give a true impression of the intention of the
+application. This means, more than anything, leaving some things out
+that, while necessary, are not core to the activities that the
+application is meant to support. The identity of the scenarios and the
+workflow that they describe must be carefully chosen to give the right
+impression without unnecessarily constraining the application or
+cluttering them with unhelpful details.
 
 Example
 -------
 
 *Project*
 
-I'm going to talk through how scenario-driven development works in
+I'm going to talk through how Scenario-Driven Development works in
 practice. I want to put that into a realistic context, so I'm going to
 describe an example project and explain how the team uses scenarios to
 frame their development process.
@@ -282,7 +312,7 @@ clutter up the scenarios with details and edge cases. We want them to
 be a clear description of the intent of the system and the activities
 it supports.
 
-One thing people say about Test Driven Development is that "it's not
+One thing people say about Test-Driven Development is that "it's not
 about the tests", it's about the rigour of the process and the design
 that the tests drive out. In the same way you could say that Scenario
 Drive Development isn't about the tests, it's about the shared

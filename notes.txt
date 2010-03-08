@@ -40,7 +40,6 @@ new
 
 todo
  - refer to 'customer tests'
- - insert refs to slides
  - move acks to intro
 
 Old acks

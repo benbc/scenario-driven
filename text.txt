@@ -1,6 +1,8 @@
 Intro
 -----
 
+[slide: Scenario-Driven Development]
+
 I'm going to talk today about Scenario-Driven
 Development. Scenario-Driven Development is an extension of
 Test-Driven Development to include the entire application, rather than
@@ -16,6 +18,8 @@ make which are more generally applicable -- the Main Ideas that I
 really want you to remember from this talk. I shall flag them clearly
 as I go along.
 
+[slide: red/green/refactor]
+
 My premise for this talk is that automated testing is good. Over the
 last ten years there has been massive growth of developer automated
 unit testing which has brought huge benefits to the entire development
@@ -26,10 +30,14 @@ to higher-level testing: to functional or acceptance tests (in my
 experience terms for different types of testing are the source of much
 disagreement; my solution is to use a different name altogether).
 
+[slide: happy face]
+
 But those attempts have often been unsuccessful in the long term. My
 aim here is to codify what it is that can make such an attempt
 successful and how to avoid the pitfalls. The outcome of that
 codification is Scenario-Driven Development.
+
+[slide: sad face]
 
 Before we talk about how to do it, let's briefly touch on how not to
 do it. The poster-child for unsuccessful approaches to automated
@@ -42,6 +50,8 @@ it to do so. Not many years ago I could be heard loudly proclaiming
 the indispensability of such an approach on a large team which was
 struggling to find a way of automating testing; fortunately few people
 listened to me and the initiative died of natural causes.
+
+[slide: lots of tests]
 
 The natural result of this approach is that you end up with a very
 large number of tests. This large number has three problems. Each one
@@ -60,6 +70,8 @@ unexpectedly. And debugging a failing test for a story that someone else
 implemented nine months ago, in a corner of the application that no one
 cares about any more is truly heart-breaking. So we give up.
 
+[slide: saw]
+
 The natural antidote to these problems is to cut your tests along a
 different grain. Instead of aligning them with the historical accident
 of how the application was developed, you align them, more naturally,
@@ -69,6 +81,8 @@ forces you to revisit the tests when a new story touches that area of
 functionality, so you have an opportunity to refactor them; it
 localizes breakages caused by changes to the way the application
 works; it makes the tests more discoverable.
+
+[slide: lots of tests]
 
 But there are still problems. You are still likely to end up with a
 lot of tests (with attendant speed problems). There is no obvious way
@@ -83,6 +97,8 @@ The solution to all these problems seems to be two-fold: align the
 tests not with functionality but with the activities that the
 application is designed to support; and be brutal in leaving things
 out of these tests, rather than trying to automate all acceptance criteria.
+
+[slide: people]
 
 So we express the tests as a number of scenarios. Each one
 encapsulates an activity that the application supports and asserts
@@ -123,17 +139,29 @@ workflow that they describe must be carefully chosen to give the right
 impression without unnecessarily constraining the application or
 cluttering them with unhelpful details.
 
-Before I go any further, I want to acknowledge my sources. The idea of
-scenarios as a way of framing the entire development process is
-closely related to story mapping; I recommend Jeff Patton's writing on
-the subject. Scenario-Driven Development is a close cousin of
-Behaviour-Driven Development; many of my ideas are directly stolen
-from Dan North. The technical approach that I use for implementing
-scenarios owes a lot to Nat Pryce and Steve Freeman's book which I
-whole-heartedly recommend to all developers.
+Before I go any further, I want to acknowledge my sources.
+
+[slide: story mapping]
+
+The idea of scenarios as a way of framing the entire development
+process is closely related to story mapping; I recommend Jeff Patton's
+writing on the subject.
+
+[slide: BDD]
+
+Scenario-Driven Development is a close cousin of Behaviour-Driven
+Development; many of my ideas are directly stolen from Dan North.
+
+[slide: GOOS]
+
+The technical approach that I use for implementing scenarios owes a
+lot to Nat Pryce and Steve Freeman's book which I wholeheartedly
+recommend to all developers.
 
 Example
 -------
+
+[slide: team]
 
 *Project*
 
@@ -142,27 +170,57 @@ practice. I want to put that into a realistic context, so I'm going to
 describe an example project and explain how the team uses scenarios to
 frame their development process.
 
-First, let me introduce you to the team. This is Parvinder, the
-project manager; he spends a lot of time worrying and fiddling with
-spreadsheets -- we won't have much more to do with him. This is
-Bethany, the business analyst; she is responsible for understanding
-the customers' needs and turning them into words of one syllable that
-the rest of the team understand. This is Terrance, the tester; he
-helps Bethany write the acceptance criteria for the stories, helps the
-developers implement the stories and finally checks that everything is
-working properly -- it rather sounds like he does all the work. And
-these are Doreen, Delilah and Dave; as you will have guessed, they are
-the developers; they write code.
+First, let me introduce you to the team.
 
-The team are using an XP-ish agile process. They work closely with the
-customer (here's the customer, he's called Cesar) to understand what
-the application needs to do. These requirements are expressed as
-stories, which have a narrative and brief acceptance criteria. Much of
-the understanding of the stories is a shared, social understanding
-amongst the members of the team rather than being rigorously
-documented. The whole team is involved, to some extent, throughout the
-development process, collaborating and ensuring that everyone shares
-an understanding of where the application is headed.
+[slide: Parvinder]
+
+This is Parvinder, the project manager; he spends a lot of time
+worrying and fiddling with spreadsheets -- we won't have much more to
+do with him.
+
+[slide: Bethany]
+
+This is Bethany, the business analyst; she is responsible for
+understanding the customers' needs and turning them into words of one
+syllable that the rest of the team understand.
+
+[slide: Terrence]
+
+This is Terrence, the tester; he helps Bethany write the acceptance
+criteria for the stories, helps the developers implement the stories
+and finally checks that everything is working properly -- it rather
+sounds like he does all the work.
+
+[slide: developers]
+
+And these are Doreen, Delilah and Dave; as you will have guessed, they
+are the developers; they write code.
+
+The team are using an XP-ish agile process.
+
+[slide: Cesar]
+
+They work closely with the customer (here's the customer, he's called
+Cesar) to understand what the application needs to do.
+
+[slide: story]
+
+These requirements are expressed as stories, which have a narrative
+and brief acceptance criteria.
+
+[slide: story and team]
+
+Much of the understanding of the stories is a shared, social
+understanding amongst the members of the team rather than being
+rigorously documented.
+
+[slide: team]
+
+The whole team is involved, to some extent, throughout the development
+process, collaborating and ensuring that everyone shares an
+understanding of where the application is headed.
+
+[slide: money]
 
 The application the team is working on is an online banking app. It
 allows the bank's customers to see their statements, make payments,
@@ -170,21 +228,27 @@ all the usual sort of stuff.
 
 *Scenarios*
 
+[slide: scenario]
+
 As well as unit tests, and the odd integration test to check the
 interaction between their code and external systems, the team has a
 set of scenario tests which describe the main activities that the
 application supports. I'm going to show you a couple of their
 scenarios.
 
-The ownership of these scenarios is shared amongst the team. Bethany
+[slide: team and scenario]
+
+The ownership of these scenarios is shared amongst the team.  Bethany
 (the BA) is responsible for what the scenarios should be, that is to
 say for agreeing with Cesar (the customer) what activities the
-application supports and how the application will be used. Terrance
+application supports and how the application will be used.  Terrence
 decides exactly what the workflow of each scenario is and owns their
-textual description. Doreen, Delilah and Dave write the code that
+textual description.  Doreen, Delilah and Dave write the code that
 automate the scenarios.
 
 This is the "Patricia Pays Her Phone Bill" scenario.
+
+[slide: twist screenshot]
 
 { Patricia exists. }
 { Patricia has £22 in her current account. }
@@ -214,6 +278,8 @@ and has enough money in her account to make the payment successfully.
 And here is another scenario: "Pierre Wonders Why He Is So
 Poor".
 
+[slide: twist screenshot] 
+
 { Pierre exists. }
 { Pierre has made 12 payments to Amazon. }
 { Pierre has made a £132 payment to Sevilla Mia. }
@@ -230,6 +296,8 @@ Pierre looks at the statement for his account, filters it to
 show out-goings only, gives a little moan of despair and then follows
 a link to find out about low-rate loans.
 
+[slide: scenarios]
+
 There are several other scenarios, but not a huge number. Each one
 describes how the users of the system will carry out some important
 activity. The scenarios are aligned with those activities rather than
@@ -239,16 +307,23 @@ accounts is an important feature of the system. But the scenarios are
 at a higher level than that -- they describe the motivations behind
 the application as well as how it works.
 
+[slide: bethany, cesar and scenarios]
+
 The scenarios were roughly sketched out right at the beginning of the
 project, by Bethany and Cesar, before they drilled down into the
-features that would need to go into the application. They've been used
-to guide the whole team since then: to help define and prioritize
-features, to ensure the team shares an understanding of what the
-application is for and, through their embodiment as automated tests,
-to ensure that the application really does support the activities it
-has been designed for.
+features that would need to go into the application.
+
+[slide: team and scenarios]
+
+They've been used to guide the whole team since then: to help define
+and prioritize features, to ensure the team shares an understanding of
+what the application is for and, through their embodiment as automated
+tests, to ensure that the application really does support the
+activities it has been designed for.
 
 *A story*
+
+[slide: mingle screenshot]
 
 So what happens when the team plays a new story? Here is the story
 they're working on now: "Stop account going overdrawn".
@@ -273,7 +348,9 @@ account go overdrawn. Here are the acceptance criteria:
 
 *Updating the scenarios*
 
-When this story is played, Terrance (the tester) needs to think about
+[slide: terrence and scenario]
+
+When this story is played, Terrence (the tester) needs to think about
 how it affects the scenarios. In the "Patricia Pays her Phone Bill"
 scenario, we saw Patricia transfer money into her current account in
 order to make the payment. Here's an opportunity to exercise this new
@@ -299,6 +376,8 @@ as is reasonably possible (and I'll talk about some techniques to help
 with that later), but they can't be edge-to-edge system tests and
 still remain as lightning fast as unit tests.
 
+[slide: updated screenshot]
+
 So Terrence updates "Patricia pays her Phone Bill" to reflect the new
 functionality. A new section of the test sees Patricia trying to make
 the payment before she has transferred the money from her savings
@@ -321,6 +400,8 @@ clutter up the scenarios with details and edge cases. We want them to
 be a clear description of the intent of the system and the activities
 it supports.
 
+[slide: team and scenario]
+
 One thing people say about Test-Driven Development is that "it's not
 about the tests", it's about the rigour of the process and the design
 that the tests drive out. In the same way you could say that Scenario
@@ -328,6 +409,8 @@ Drive Development isn't about the tests, it's about the shared
 understanding of the system that they bring to the team. Obviously the
 automated tests that are a byproduct of both approaches are extremely
 valuable and we wouldn't want to be without them.
+
+[slide: updated scenario]
 
 Now one part of this scenario, where it checks for the message,
 is completely new. The message wasn't there before, so the code
@@ -344,8 +427,12 @@ you in action. I'll also talk about other technologies that can be
 used.
 
 So right now, in our story, this scenario *fails*. In fact it doesn't
-even compile. To get it compiling, and eventually passing, we need to
-turn to Doreen, Delilah and Dave.
+even compile.
+
+[slide: developers and scenario]
+
+To get it compiling, and eventually passing, we need to turn to
+Doreen, Delilah and Dave.
 
 *Implementing the story*
 
@@ -353,6 +440,8 @@ Before we talk about the process for implementing the story, We need
 to stop and talk about how the test harness for the scenarios is
 structured. The approach I'm going to describe is roughly technology
 agnostic.
+
+[slide: architecture]
 
 The top layer is the scenarios themselves. They sit on top of a
 workflow layer which models the process of using the application. In
@@ -372,13 +461,18 @@ HTML elements and XPath expressions. This implementation will
 typically use a library designed for driving GUI apps, like Selenium,
 Watir, White or Abbot.
 
-Let's look at who has responsibility for these layers. Bethany (the
-business analyst) and Terrence are responsible for the contents of the
-scenario layer. Terrance can change the scenarios as he needs to. If
-his changes are already supported by the workflow layer then he's
-done. (Of course the tests will probably fail when they're changed,
-but the developers only have to concern themselves with the
-application code.)
+Let's look at who has responsibility for these layers.
+
+[slide: bethany, terrence and scenario layer]
+
+Bethany (the business analyst) and Terrence are responsible for the
+contents of the scenario layer. Terrence can change the scenarios as
+he needs to. If his changes are already supported by the workflow
+layer then he's done. (Of course the tests will probably fail when
+they're changed, but the developers only have to concern themselves
+with the application code.)
+
+[slide: terrence, developer and workflow layer]
 
 The implementation of the workflow layer in terms of the application
 model is also Terrence's domain. He cares that the application model
@@ -389,13 +483,23 @@ tell apart). Between them they will ensure that the code accurately
 models the application and that it is reasonably efficient and easy to
 implement in the layer below.
 
+[slide: developers and application model]
+
 After that it's developers all the way down. The developers own the
-code in the application layer and of course the application itself.
+code in the application model and of course the application itself.
+
+[slide: terrence, developer and architecture]
 
 So during the development of a story, Delilah first pairs with
-Terrence to fill in the code under the scenario, then she pairs with
-Dave to finish the test code. Finally they turn to the application
-code.
+Terrence to fill in the code under the scenario,
+
+[slide: developers and application model]
+
+then she pairs with Dave to finish the test code.
+
+[slide developers and application]
+
+Finally they turn to the application code.
 
 Notice that as well as using the scenario to drive the functionality
 of the code that is being written, we are also using the test harness
@@ -405,6 +509,8 @@ that they will be querying. This forces us to consider testability at
 the application and UI level in the same way that TDD does at the
 object level.
 
+[slide: driving everything]
+
 Driving everything
 ------------------
 
@@ -412,10 +518,16 @@ I intend that the idea of driving development with scenarios should be
 taken very seriously and should start right at the beginning. I think
 that sketching out a candidate set of activities that the application
 will support should be pretty much the first piece of analysis that is
-carried out on a project. This set of activities, and the scenarios
-that illustrate them, act as a manifesto for the project. They enable
-the customers to clarify what they want from the application and
-provide a vision for the application which is shared amongst the team.
+carried out on a project.
+
+[slide: bethany, cesar, activities and scenarios]
+
+This set of activities, and the scenarios that illustrate them, act as
+a manifesto for the project. They enable the customers to clarify what
+they want from the application and provide a vision for the
+application which is shared amongst the team.
+
+[slide: activities, scenarios and team]
 
 The scenarios are not *just* *tests*. Their identity, purpose and flow
 should be familiar to everyone on the team; and the team, including
@@ -438,12 +550,18 @@ correct and they can't adapt as we learn things during
 development. Instead of being able to point at the essence, it has to
 be taken on trust.
 
+[slide: team and views]
+
 Parvinder and Bethany and Terrence and Doreen and Delilah and Dave and
 Cesar all have their own view of what this essence is, their own
-mental models of the applications. I suspect that, if we could measure
-it, we would find that the extent to which the members of a team share
-a view of this essence (and the extent to which their view is clear
-and complete) is a strong indicator of the success of a project.
+mental models of the applications.
+
+[slide: team and single view]
+
+I suspect that, if we could measure it, we would find that the extent
+to which the members of a team share a view of this essence (and the
+extent to which their view is clear and complete) is a strong
+indicator of the success of a project.
 
 We can't see the essence, but we can see *projections* of it into
 various media. Each of these projections is incomplete and distorted,
@@ -461,23 +579,30 @@ complete (it doesn't include the behaviour of the people who use the
 software, or the environment that it runs in). And there maybe so much
 of it that it isn't clear what the sum of the parts comes to.
 
+[slide: essence and projections]
+
 All the team members have a greater or lesser familiarity with various
 other projections, which include the documentation, the unit tests,
 maybe even the marketing material. The complete set of implemented
 stories is another projection.
 
+[slide: essence and story]
+
 An individual story can be seen as a delta to the essence. A
 well-written story steers clear of talking about the implementation;
 in a team where the UI design work is incorporated into the
 development it may even avoid too many details about the interface. So
-what it talks about is the essence. And when any member of the team
-reads the story they naturally project that essence into the medium
-that they are most familiar with. The UI designer sees how the flow of
-the UI needs to change to accommodate some new widget; Terrence
-imagines the edge cases and interactions that need testing; the
-developers can see which modules in the code need to change; the
-technical writer knows immediately which sections of the documentation
-need to be updated.
+what it talks about is the essence.
+
+[slide: projections and story]
+
+And when any member of the team reads the story they naturally project
+that essence into the medium that they are most familiar with. The UI
+designer sees how the flow of the UI needs to change to accommodate
+some new widget; Terrence imagines the edge cases and interactions
+that need testing; the developers can see which modules in the code
+need to change; the technical writer knows immediately which sections
+of the documentation need to be updated.
 
 And of course the scenarios are just one more projection. But they are
 an interesting one. They are rather abstracted from the details of the
@@ -489,6 +614,8 @@ affect of it on the scenarios, rather than having their own private
 view. So perhaps the scenarios are the closest thing we have to a
 faithful projection of the essence (although of course we pay a price
 in the paucity of detail).
+
+[slide: evolving scenarios]
 
 The process of developing an application can be framed in terms of
 elaboration of the application's scenarios. The identity of the
@@ -508,6 +635,8 @@ approach.
 
 *Collaboration*
 
+[slide: terrence and developers]
+
 Earlier I described a close collaboration between testers and
 developers, pairing to write the code behind the scenarios. I would
 like to take that collaboration further and maintain it throughout the
@@ -521,6 +650,8 @@ know what has been checked in, what should be working correctly (and
 that he can test) and what has not yet been implemented. This way, by
 the time the developers are finished (or a very short while after) the
 tester is finished with the story too.
+
+[slide: broken scenarios]
 
 Another issue concerning team collaboration is what to do with the
 scenarios that are affected by a story, while that story is under
@@ -560,6 +691,8 @@ creep in because it is being temporarily ignored.
 
 The remaining concerns are technical.
 
+[slide: drive points]
+
 One major decision in any high-level test like these scenarios is how
 much of the system do we test. Should we drive the application through
 its user-interface, or should we call directly into the code? Should
@@ -578,6 +711,8 @@ code, right up to the edges (for example if you are stubbing out a
 system that you integrate with then write a simulator for it and
 interact with it over a realistic transport).
 
+[slide: scenario]
+
 Another decision that you have to make is what technology to use for
 writing your scenarios. In the example I showed you I used Twist,
 which is extremely well suited to this approach. Other possibilities
@@ -587,6 +722,8 @@ designed for BDD-style testing. I have most frequently used plain old
 code with a standard unit testing framework, making an effort to
 ensure that the code is readable to non-developers, but generally
 requiring developers to make significant changes to it.
+
+[slide: architecture with fixtures]
 
 The part of the code supporting the scenarios that often needs most
 attention, design and rework is the fixture code. The main workflow of

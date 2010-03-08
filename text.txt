@@ -123,6 +123,15 @@ workflow that they describe must be carefully chosen to give the right
 impression without unnecessarily constraining the application or
 cluttering them with unhelpful details.
 
+Before I go any further, I want to acknowledge my sources. The idea of
+scenarios as a way of framing the entire development process is
+closely related to story mapping; I recommend Jeff Patton's writing on
+the subject. Scenario-Driven Development is a close cousin of
+Behaviour-Driven Development; many of my ideas are directly stolen
+from Dan North. The technical approach that I use for implementing
+scenarios owes a lot to Nat Pryce and Steve Freeman's book which I
+whole-heartedly recommend to all developers.
+
 Example
 -------
 
@@ -618,21 +627,3 @@ Outro
 -----
 
 TODO summary
-
-*Acknowledgements*
-
-I want to acknowledgement some of the people who have been most
-influential on my thinking in this area and point you in their
-direction to find out more.
-
-The approach of Scenario-Driven Development is very close to that of
-Behaviour-Driven Development, which was developed by Dan North, Chris
-Matts and others. I have been listening to what they say.
-
-Nat Pryce and Steve Freeman's book gives a better account of how to
-use tests to drive the coding process than I could hope to do. All
-developers should have read it.
-
-And as you will have spotted if you are familiar with them, the idea
-of scenarios that I presented is heavily influenced by Jeff Patton's
-writing on story mapping.

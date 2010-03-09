@@ -408,7 +408,7 @@ understanding of the system that they bring to the team. Obviously the
 automated tests that are a byproduct of both approaches are extremely
 valuable and we wouldn't want to be without them.
 
-*[slide: updated scenario]
+[slide: updated scenario]
 
 Now one part of this scenario, where it checks for the message,
 is completely new. The message wasn't there before, so the code
@@ -427,7 +427,7 @@ used.
 So right now, in our story, this scenario *fails*. In fact it doesn't
 even compile.
 
-*[slide: developers and scenario]
+[slide: developers and scenario]
 
 To get it compiling, and eventually passing, we need to turn to
 Doreen, Delilah and Dave.
@@ -495,7 +495,7 @@ Terrence to fill in the code under the scenario,
 
 then she pairs with Dave to finish the test code.
 
-[slide developers and application]
+*[slide: developers and application]
 
 Finally they turn to the application code.
 

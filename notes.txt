@@ -41,6 +41,5 @@ new
  - trailer for things to remember in intro
  - dan's feedback
  - james' feedback
-
-todo
+ - what changes to the application design
  - refer to 'customer tests'

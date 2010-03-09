@@ -70,7 +70,7 @@ unexpectedly. And debugging a failing test for a story that someone else
 implemented nine months ago, in a corner of the application that no one
 cares about any more is truly heart-breaking. So we give up.
 
-[slide: saw]
+[slide: few segregated tests]
 
 The natural antidote to these problems is to cut your tests along a
 different grain. Instead of aligning them with the historical accident
@@ -82,7 +82,7 @@ functionality, so you have an opportunity to refactor them; it
 localizes breakages caused by changes to the way the application
 works; it makes the tests more discoverable.
 
-[slide: lots of tests]
+[slide: many segregated tests]
 
 But there are still problems. You are still likely to end up with a
 lot of tests (with attendant speed problems). There is no obvious way

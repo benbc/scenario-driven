@@ -9,3 +9,4 @@ bank/logs/twist.log
 pebble-audit.log
 pebble.log
 pebble/logs/*
+.~lock*

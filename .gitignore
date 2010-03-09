@@ -10,3 +10,5 @@ workspace/**/logs
 workspace/**/bin
 workspace/**/.settings
 SESSIONS.ser
+*_404_jsp.*
+subscribe_jsp.*

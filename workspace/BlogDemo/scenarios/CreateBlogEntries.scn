@@ -1,4 +1,4 @@
-Tags:
+Tags:scenario,owner,inprogress
 Preconditions:Login as "username" with "password"
 Blog Creation:
 #create a new blog entry
@@ -8,4 +8,3 @@ Blog Creation:
 
 On the homepage:
 #we see an entry titled "What I had for supper" with content "fish and chips"
-

@@ -21,12 +21,20 @@ structure
    - dealing with failing scenarios
  - Twist demo
    - sales pitch
+   - show scenario
+     - workflow
+     - context
+     - tags
+     - run (mention drivers)
+   - navigation
+   - add steps
+     - reuse
+     - unimplemented
+     - implement
+     - record
    - refactoring
-   - reuse and intellisense
-   - drivers
-   - recording implementations
-   - organizing scenarios
-   - show unimplemented stuff
+     - extract concept
+     - rephrase
  - outro
    - twist
    - acknowledgements

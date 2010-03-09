@@ -321,7 +321,7 @@ activities it has been designed for.
 
 *A story*
 
-*[slide: mingle screenshot]
+[slide: mingle screenshot]
 
 So what happens when the team plays a new story? Here is the story
 they're working on now: "Stop account going overdrawn".
@@ -346,7 +346,7 @@ account go overdrawn. Here are the acceptance criteria:
 
 *Updating the scenarios*
 
-*[slide: terrence and scenario]
+[slide: terrence and scenario]
 
 When this story is played, Terrence (the tester) needs to think about
 how it affects the scenarios. In the "Patricia Pays her Phone Bill"
@@ -398,7 +398,7 @@ clutter up the scenarios with details and edge cases. We want them to
 be a clear description of the intent of the system and the activities
 it supports.
 
-*[slide: team and scenario]
+[slide: team and scenario]
 
 One thing people say about Test-Driven Development is that "it's not
 about the tests", it's about the rigour of the process and the design

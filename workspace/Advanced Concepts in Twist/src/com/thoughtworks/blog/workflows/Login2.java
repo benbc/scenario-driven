@@ -25,7 +25,6 @@ public class Login2 {
 
     public void submit() {
         selenium.submit("loginForm");
-        selenium.waitForPageToLoad("4000");
     }
 
     public void setPassword(String pass) {
@@ -47,7 +46,6 @@ public class Login2 {
 
     public void logoutFromTheBlog() {
         selenium.click("link=Logout");
-        selenium.waitForPageToLoad("4000");
     }
 
     public void verifyThatTheHasLoggedOut(String user) {
@@ -60,7 +58,6 @@ public class Login2 {
         selenium.type("password1", newPassword);
         selenium.type("password2", newPassword);
         selenium.click("//button[@value='Change Password']");
-        selenium.waitForPageToLoad("4000");
     }
 
     public void verifyThatTheUserHasNotLoggedIn() throws InterruptedException {

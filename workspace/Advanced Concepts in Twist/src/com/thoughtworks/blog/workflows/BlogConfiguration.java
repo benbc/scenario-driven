@@ -21,7 +21,6 @@ public class BlogConfiguration {
         selenium.type("description", description);
         selenium.type("about", about);
         selenium.click("submit");
-        selenium.waitForPageToLoad("4000");
     }
 
     public void verifyThatTheBlogNameIsAndDescriptionIsAndAboutBlurbIs(String name, String description, String about) {

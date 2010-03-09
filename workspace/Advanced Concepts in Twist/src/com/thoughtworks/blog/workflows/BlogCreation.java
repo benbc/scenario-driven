@@ -24,38 +24,31 @@ public class BlogCreation {
 
     public void verifyThatTheContentAppearsOnTheHomePage() {
         selenium.click("link=Home");
-        selenium.waitForPageToLoad("4000");
         assertTrue(selenium.isTextPresent(blogTitle));
         assertTrue(selenium.isTextPresent(blogContent));
     }
 
     public void editTheBlogEntryContent() {
         selenium.click("link=" + blogTitle);
-        selenium.waitForPageToLoad("4000");
         selenium.click("//button[@value='Edit']");
-        selenium.waitForPageToLoad("4000");
         selenium.type("title", CHANGED_BLOG_TITLE);
         selenium.type("name=body", CHANGED_BLOG_CONTENT);
         selenium.click("//button[@value='Save']");
-        selenium.waitForPageToLoad("4000");
     }
 
     public void verifyThatTheEditedContentAppearsOnTheHomePage() {
         selenium.click("link=Home");
-        selenium.waitForPageToLoad("4000");
         assertTrue(selenium.isTextPresent(CHANGED_BLOG_TITLE));
         assertTrue(selenium.isTextPresent(CHANGED_BLOG_CONTENT));
     }
 
     public void createANewBlogEntry() {
         selenium.click("link=New blog entry");
-        selenium.waitForPageToLoad("4000");
     }
 
     public void addSomeSampleContent() {
         selenium.type("title", blogTitle);
         selenium.type("name=body", blogContent);
         selenium.click("//button[@value='Save']");
-        selenium.waitForPageToLoad("4000");
     }
 }

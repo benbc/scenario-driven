@@ -9,7 +9,6 @@ public class LoginTable {
     public LoginTable(TwistSelenium selenium) {
         this.selenium = selenium;
         selenium.open("/blog");
-        selenium.waitForPageToLoad("4000");
     }
 
     public void setPassword(String password) {
@@ -22,7 +21,6 @@ public class LoginTable {
 
     public boolean loggedIn() throws InterruptedException {
         selenium.submit("loginForm");
-        selenium.waitForPageToLoad("4000");
         
         boolean loggedIn = selenium.isTextPresent("Logout");
 

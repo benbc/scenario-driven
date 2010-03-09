@@ -18,7 +18,6 @@ public class Login {
         selenium.type("j_username", user);
         selenium.type("j_password", pass);
         selenium.submit("loginForm");
-        selenium.waitForPageToLoad("4000");
     }
 
     public void verifyThatTheHasLoggedIn(String user) {
@@ -35,7 +34,6 @@ public class Login {
 		}
     	
         selenium.click("link=Logout");
-        selenium.waitForPageToLoad("4000");
     }
 
     public void verifyThatTheHasLoggedOut(String user) {
@@ -48,7 +46,6 @@ public class Login {
         selenium.type("password1", newPassword);
         selenium.type("password2", newPassword);
         selenium.click("//button[@value='Change Password']");
-        selenium.waitForPageToLoad("4000");
     }
 
     public void verifyThatTheUserHasNotLoggedIn() throws InterruptedException {

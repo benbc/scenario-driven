@@ -14,3 +14,4 @@ SESSIONS.ser
 subscribe_jsp.*
 *_jsp.java
 *_jsp.class
+workspace/**/reports

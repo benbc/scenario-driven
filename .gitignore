@@ -12,3 +12,5 @@ workspace/**/.settings
 SESSIONS.ser
 *_404_jsp.*
 subscribe_jsp.*
+*_jsp.java
+*_jsp.class

@@ -1,0 +1,11 @@
+Tags:
+Preconditions:Login as "username" with "password"
+Blog Creation:
+#create a new blog entry
+#enter a title "What I had for supper"
+#enter a body "fish and chips"
+#save and publish the entry
+
+On the homepage:
+#we see an entry titled "What I had for supper" with content "fish and chips"
+

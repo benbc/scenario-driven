@@ -11,10 +11,13 @@ public class BlogCreation {
 
     private static final String CHANGED_BLOG_TITLE = "My Blog (Updated)";
     private static final String CHANGED_BLOG_CONTENT = "my updated blog text.";
-    private TwistSelenium selenium;
+    TwistSelenium selenium;
+	private HomePage homePage;
+	private NewBlogEntryPage newBlogEntryPage;
 
-    public BlogCreation(TwistSelenium selenium) {
+    public BlogCreation(TwistSelenium selenium, HomePage homePage) {
         this.selenium = selenium;
+        this.homePage = homePage;
     }
 
     public void createANewBlogEntryWithSomeSampleContent() {
@@ -43,12 +46,26 @@ public class BlogCreation {
     }
 
     public void createANewBlogEntry() {
-        selenium.click("link=New blog entry");
+        newBlogEntryPage = homePage.goToNewBlogEntry(this);
     }
 
-    public void addSomeSampleContent() {
+	public void addSomeSampleContent() {
         selenium.type("title", blogTitle);
         selenium.type("name=body", blogContent);
         selenium.click("//button[@value='Save']");
     }
+
+	public void enterATitle(String title) throws Exception {
+		newBlogEntryPage.enterTitle(title);
+	}
+
+	public void enterABody(String body) throws Exception {
+		newBlogEntryPage.enterBody(body);
+	}
+
+	public void saveAndPublishTheEntry() throws Exception {
+		PreviewPage previewPage = newBlogEntryPage.save();
+		PublishPage publishPage = previewPage.publish();
+		homePage = publishPage.publish();
+	}
 }

@@ -1,14 +1,11 @@
 bank/build
 workspace/.metadata
-workspace/Bank/bin
-workspace/BankScenarios/bin
-workspace/BankScenarios/.settings/
 bank/bin
-workspace/BankScenarios/logs/twist.log
 bank/logs/twist.log
 pebble-audit.log
 pebble.log
 pebble/logs/*
 .~lock*
-workspace/Advanced\ Concepts\ in\ Twist/logs/
-workspace/Advanced\ Concepts\ in\ Twist/bin
+workspace/**/logs
+workspace/**/bin
+workspace/**/.settings

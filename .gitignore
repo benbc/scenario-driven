@@ -6,3 +6,6 @@ workspace/BankScenarios/.settings/
 bank/bin
 workspace/BankScenarios/logs/twist.log
 bank/logs/twist.log
+pebble-audit.log
+pebble.log
+pebble/logs/*

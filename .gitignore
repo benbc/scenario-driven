@@ -9,3 +9,4 @@ pebble/logs/*
 workspace/**/logs
 workspace/**/bin
 workspace/**/.settings
+SESSIONS.ser

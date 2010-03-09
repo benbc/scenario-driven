@@ -1,23 +1,23 @@
 package com.thoughtworks.blog.contexts;
 
-import com.thoughtworks.blog.workflows.Login;
-import com.thoughtworks.twist.driver.selenium.TwistSelenium;
+import com.thoughtworks.blog.pages.LoginPage;
 
 public class LoginAsWith {
 
-    private final Login login;
+    private final LoginPage loginPage;
 
-    public LoginAsWith(TwistSelenium selenium) {
-        this.login = new Login(selenium);
+    public LoginAsWith(LoginPage loginPage) {
+        this.loginPage = loginPage;
 
     }
 
-    public void setUp(String user, String pass) {
-        login.loginAsWith(user, pass);
+    public void setUp(String user, String password) {
+        loginPage.enterUsername(user);
+        loginPage.enterPassword(password);
+        loginPage.submit();
     }
 
     public void tearDown(String user, String pass) {
-        login.logoutFromTheBlog();
+        loginPage.logoutFromTheBlog();
     }
-
 }

@@ -1,4 +1,4 @@
-package com.thoughtworks.blog.workflows;
+package com.thoughtworks.blog.pages;
 
 import com.thoughtworks.twist.driver.selenium.TwistSelenium;
 

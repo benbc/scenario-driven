@@ -1,17 +1,17 @@
-package com.thoughtworks.blog.workflows;
+package com.thoughtworks.blog.pages;
 
 import com.thoughtworks.twist.driver.selenium.TwistSelenium;
 
-public class PreviewPage {
-	
+public class PublishPage {
+
 	private final TwistSelenium selenium;
 
-	public PreviewPage(TwistSelenium selenium) {
+	public PublishPage(TwistSelenium selenium) {
 		this.selenium = selenium;
 	}
-	
-	public PublishPage publish() {
+
+	public HomePage publish() {
 		selenium.click("//button[@value='Publish']");
-		return new PublishPage(selenium);
+		return new HomePage(selenium);
 	}
 }

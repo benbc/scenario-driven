@@ -11,9 +11,10 @@
 		<constructor-arg value="tomcat" />
 	</bean>
 
-	<bean class="com.thoughtworks.blog.workflows.HomePage" autowire="autodetect"/>
-	<bean class="com.thoughtworks.blog.workflows.NewBlogEntryPage" autowire="autodetect"/>
-	<bean class="com.thoughtworks.blog.workflows.PreviewPage" autowire="autodetect"/>
-	<bean class="com.thoughtworks.blog.workflows.PublishPage" autowire="autodetect"/>
+	<bean class="com.thoughtworks.blog.pages.HomePage" autowire="autodetect"/>
+	<bean class="com.thoughtworks.blog.pages.NewBlogEntryPage" autowire="autodetect"/>
+	<bean class="com.thoughtworks.blog.pages.PreviewPage" autowire="autodetect"/>
+	<bean class="com.thoughtworks.blog.pages.PublishPage" autowire="autodetect"/>
+	<bean class="com.thoughtworks.blog.pages.LoginPage" autowire="autodetect"/>
 	
 </beans>

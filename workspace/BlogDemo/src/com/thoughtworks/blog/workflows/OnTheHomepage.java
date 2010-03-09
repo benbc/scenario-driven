@@ -2,6 +2,8 @@ package com.thoughtworks.blog.workflows;
 
 import static junit.framework.Assert.assertTrue;
 
+import com.thoughtworks.blog.pages.HomePage;
+
 public class OnTheHomepage {
 
 	private final HomePage homePage;

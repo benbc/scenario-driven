@@ -1,5 +1,6 @@
-package com.thoughtworks.blog.workflows;
+package com.thoughtworks.blog.pages;
 
+import com.thoughtworks.blog.workflows.BlogCreation;
 import com.thoughtworks.twist.driver.selenium.TwistSelenium;
 
 public class HomePage {

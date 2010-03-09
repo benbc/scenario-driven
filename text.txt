@@ -633,7 +633,7 @@ approach.
 
 *Collaboration*
 
-*[slide: terrence and developers]
+[slide: terrence and developers]
 
 Earlier I described a close collaboration between testers and
 developers, pairing to write the code behind the scenarios. I would
@@ -709,7 +709,7 @@ code, right up to the edges (for example if you are stubbing out a
 system that you integrate with then write a simulator for it and
 interact with it over a realistic transport).
 
-*[slide: scenario]
+[slide: scenario]
 
 Another decision that you have to make is what technology to use for
 writing your scenarios. In the example I showed you I used Twist,

@@ -1,0 +1,138 @@
+Apr 8, 2009 11:13:03 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: d:\jdk1.5.0_07\bin;.;C:\WINDOWS\system32;C:\WINDOWS;d:\ruby\bin;C:\Perl\bin\;C:\Perl\site\bin;C:\Perl\bin;z:\bin;c:\oracle\product\10.2.0\db_1\bin;C:\projects\medstat\maven\2.0.8\bin;d:\jdk1.5.0_07\bin;D:\programs\PHP\;C:\Program Files\MiKTeX 2.6\miktex\bin;D:\ruby\bin;D:\programs\Python25;D:\programs\jython2.2b2;D:\programs\jruby\bin;d:\Python25\GTK\bin;D:\MySQL\MySQL Server 5.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;D:\apache-ant-1.6.5\bin;C:\Program Files\Subversion\bin;d:\programs\curl_716_2_ssl;C:\Program Files\cvsnt;d:\programs\Mercurial;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\cygwin\bin;D:\programs\erl5.5.5\bin;C:\programs\Oracle\product\10.1.0\Client_1\bin;C:\programs\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;C:\programs\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Program Files\ImageConverter Plus;C:\Program Files\OpenSSH\bin;C:\Program Files\Windows Imaging\;I:\sugarcrm-5.0.0f\mssql\shared\90\Tools\binn\;C:\Program Files\Common Files\Symbian\tools;C:\mobile\CSL Arm Toolchain\bin;D:\programs\Python25\Lib\site-pack;C:\MySQL\5.1\server\bin;D:\junk\jacob-1.14.3\jacob-1.14.3;C:\Parrot-1.0.0\bin;C:\Google\google_appengine_1_1_5;I:\mobile_installers\Symbian\Qt\4.4.4-temple\bin;d:\android-sdk-windows-1.0_r2\tools;C:\Program Files\Mozilla Firefox3;C:\Program Files\Git\bin
+Apr 8, 2009 11:13:03 AM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:13:03 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 870 ms
+Apr 8, 2009 11:13:03 AM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Apr 8, 2009 11:13:03 AM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.18
+Apr 8, 2009 11:13:10 AM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:13:10 AM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Apr 8, 2009 11:13:10 AM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/31  config=null
+Apr 8, 2009 11:13:10 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 6913 ms
+Apr 8, 2009 11:14:38 AM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:14:39 AM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Apr 8, 2009 11:14:39 AM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:14:42 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: d:\jdk1.5.0_07\bin;.;C:\WINDOWS\system32;C:\WINDOWS;d:\ruby\bin;C:\Perl\bin\;C:\Perl\site\bin;C:\Perl\bin;z:\bin;c:\oracle\product\10.2.0\db_1\bin;C:\projects\medstat\maven\2.0.8\bin;d:\jdk1.5.0_07\bin;D:\programs\PHP\;C:\Program Files\MiKTeX 2.6\miktex\bin;D:\ruby\bin;D:\programs\Python25;D:\programs\jython2.2b2;D:\programs\jruby\bin;d:\Python25\GTK\bin;D:\MySQL\MySQL Server 5.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;D:\apache-ant-1.6.5\bin;C:\Program Files\Subversion\bin;d:\programs\curl_716_2_ssl;C:\Program Files\cvsnt;d:\programs\Mercurial;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\cygwin\bin;D:\programs\erl5.5.5\bin;C:\programs\Oracle\product\10.1.0\Client_1\bin;C:\programs\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;C:\programs\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Program Files\ImageConverter Plus;C:\Program Files\OpenSSH\bin;C:\Program Files\Windows Imaging\;I:\sugarcrm-5.0.0f\mssql\shared\90\Tools\binn\;C:\Program Files\Common Files\Symbian\tools;C:\mobile\CSL Arm Toolchain\bin;D:\programs\Python25\Lib\site-pack;C:\MySQL\5.1\server\bin;D:\junk\jacob-1.14.3\jacob-1.14.3;C:\Parrot-1.0.0\bin;C:\Google\google_appengine_1_1_5;I:\mobile_installers\Symbian\Qt\4.4.4-temple\bin;d:\android-sdk-windows-1.0_r2\tools;C:\Program Files\Mozilla Firefox3;C:\Program Files\Git\bin
+Apr 8, 2009 11:14:42 AM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:14:42 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 500 ms
+Apr 8, 2009 11:14:42 AM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Apr 8, 2009 11:14:42 AM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.18
+Apr 8, 2009 11:14:55 AM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:14:55 AM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Apr 8, 2009 11:14:55 AM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/15  config=null
+Apr 8, 2009 11:14:55 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 12656 ms
+Apr 8, 2009 11:15:00 AM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:15:01 AM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Apr 8, 2009 11:15:02 AM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:15:06 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: d:\jdk1.5.0_07\bin;.;C:\WINDOWS\system32;C:\WINDOWS;d:\ruby\bin;C:\Perl\bin\;C:\Perl\site\bin;C:\Perl\bin;z:\bin;c:\oracle\product\10.2.0\db_1\bin;C:\projects\medstat\maven\2.0.8\bin;d:\jdk1.5.0_07\bin;D:\programs\PHP\;C:\Program Files\MiKTeX 2.6\miktex\bin;D:\ruby\bin;D:\programs\Python25;D:\programs\jython2.2b2;D:\programs\jruby\bin;d:\Python25\GTK\bin;D:\MySQL\MySQL Server 5.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;D:\apache-ant-1.6.5\bin;C:\Program Files\Subversion\bin;d:\programs\curl_716_2_ssl;C:\Program Files\cvsnt;d:\programs\Mercurial;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\cygwin\bin;D:\programs\erl5.5.5\bin;C:\programs\Oracle\product\10.1.0\Client_1\bin;C:\programs\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;C:\programs\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Program Files\ImageConverter Plus;C:\Program Files\OpenSSH\bin;C:\Program Files\Windows Imaging\;I:\sugarcrm-5.0.0f\mssql\shared\90\Tools\binn\;C:\Program Files\Common Files\Symbian\tools;C:\mobile\CSL Arm Toolchain\bin;D:\programs\Python25\Lib\site-pack;C:\MySQL\5.1\server\bin;D:\junk\jacob-1.14.3\jacob-1.14.3;C:\Parrot-1.0.0\bin;C:\Google\google_appengine_1_1_5;I:\mobile_installers\Symbian\Qt\4.4.4-temple\bin;d:\android-sdk-windows-1.0_r2\tools;C:\Program Files\Mozilla Firefox3;C:\Program Files\Git\bin
+Apr 8, 2009 11:15:06 AM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:15:06 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 501 ms
+Apr 8, 2009 11:15:06 AM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Apr 8, 2009 11:15:06 AM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.18
+Apr 8, 2009 11:15:10 AM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:15:11 AM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Apr 8, 2009 11:15:11 AM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/16  config=null
+Apr 8, 2009 11:15:11 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 4894 ms
+Apr 8, 2009 11:15:32 AM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:15:33 AM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Apr 8, 2009 11:15:34 AM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:15:39 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: d:\jdk1.5.0_07\bin;.;C:\WINDOWS\system32;C:\WINDOWS;d:\ruby\bin;C:\Perl\bin\;C:\Perl\site\bin;C:\Perl\bin;z:\bin;c:\oracle\product\10.2.0\db_1\bin;C:\projects\medstat\maven\2.0.8\bin;d:\jdk1.5.0_07\bin;D:\programs\PHP\;C:\Program Files\MiKTeX 2.6\miktex\bin;D:\ruby\bin;D:\programs\Python25;D:\programs\jython2.2b2;D:\programs\jruby\bin;d:\Python25\GTK\bin;D:\MySQL\MySQL Server 5.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;D:\apache-ant-1.6.5\bin;C:\Program Files\Subversion\bin;d:\programs\curl_716_2_ssl;C:\Program Files\cvsnt;d:\programs\Mercurial;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\cygwin\bin;D:\programs\erl5.5.5\bin;C:\programs\Oracle\product\10.1.0\Client_1\bin;C:\programs\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;C:\programs\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Program Files\ImageConverter Plus;C:\Program Files\OpenSSH\bin;C:\Program Files\Windows Imaging\;I:\sugarcrm-5.0.0f\mssql\shared\90\Tools\binn\;C:\Program Files\Common Files\Symbian\tools;C:\mobile\CSL Arm Toolchain\bin;D:\programs\Python25\Lib\site-pack;C:\MySQL\5.1\server\bin;D:\junk\jacob-1.14.3\jacob-1.14.3;C:\Parrot-1.0.0\bin;C:\Google\google_appengine_1_1_5;I:\mobile_installers\Symbian\Qt\4.4.4-temple\bin;d:\android-sdk-windows-1.0_r2\tools;C:\Program Files\Mozilla Firefox3;C:\Program Files\Git\bin
+Apr 8, 2009 11:15:39 AM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:15:39 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 507 ms
+Apr 8, 2009 11:15:39 AM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Apr 8, 2009 11:15:39 AM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.18
+Apr 8, 2009 11:15:42 AM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 11:15:42 AM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Apr 8, 2009 11:15:42 AM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/31  config=null
+Apr 8, 2009 11:15:42 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 2790 ms
+Apr 8, 2009 12:00:05 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: d:\jdk1.5.0_07\bin;.;C:\WINDOWS\system32;C:\WINDOWS;d:\ruby\bin;C:\Perl\bin\;C:\Perl\site\bin;C:\Perl\bin;z:\bin;c:\oracle\product\10.2.0\db_1\bin;C:\projects\medstat\maven\2.0.8\bin;d:\jdk1.5.0_07\bin;D:\programs\PHP\;C:\Program Files\MiKTeX 2.6\miktex\bin;D:\ruby\bin;D:\programs\Python25;D:\programs\jython2.2b2;D:\programs\jruby\bin;d:\Python25\GTK\bin;D:\MySQL\MySQL Server 5.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;D:\apache-ant-1.6.5\bin;C:\Program Files\Subversion\bin;d:\programs\curl_716_2_ssl;C:\Program Files\cvsnt;d:\programs\Mercurial;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\cygwin\bin;D:\programs\erl5.5.5\bin;C:\programs\Oracle\product\10.1.0\Client_1\bin;C:\programs\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;C:\programs\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Program Files\ImageConverter Plus;C:\Program Files\OpenSSH\bin;C:\Program Files\Windows Imaging\;I:\sugarcrm-5.0.0f\mssql\shared\90\Tools\binn\;C:\Program Files\Common Files\Symbian\tools;C:\mobile\CSL Arm Toolchain\bin;D:\programs\Python25\Lib\site-pack;C:\MySQL\5.1\server\bin;D:\junk\jacob-1.14.3\jacob-1.14.3;C:\Parrot-1.0.0\bin;C:\Google\google_appengine_1_1_5;I:\mobile_installers\Symbian\Qt\4.4.4-temple\bin;d:\android-sdk-windows-1.0_r2\tools;C:\Program Files\Mozilla Firefox3;C:\Program Files\Git\bin
+Apr 8, 2009 12:00:06 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 12:00:06 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 508 ms
+Apr 8, 2009 12:00:06 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Apr 8, 2009 12:00:06 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.18
+Apr 8, 2009 12:00:10 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 12:00:10 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Apr 8, 2009 12:00:10 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/15  config=null
+Apr 8, 2009 12:00:10 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 4272 ms
+Apr 8, 2009 12:00:13 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 12:00:14 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Apr 8, 2009 12:00:15 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 12:00:49 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: d:\jdk1.5.0_07\bin;.;C:\WINDOWS\system32;C:\WINDOWS;d:\ruby\bin;C:\Perl\bin\;C:\Perl\site\bin;C:\Perl\bin;z:\bin;c:\oracle\product\10.2.0\db_1\bin;C:\projects\medstat\maven\2.0.8\bin;d:\jdk1.5.0_07\bin;D:\programs\PHP\;C:\Program Files\MiKTeX 2.6\miktex\bin;D:\ruby\bin;D:\programs\Python25;D:\programs\jython2.2b2;D:\programs\jruby\bin;d:\Python25\GTK\bin;D:\MySQL\MySQL Server 5.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;D:\apache-ant-1.6.5\bin;C:\Program Files\Subversion\bin;d:\programs\curl_716_2_ssl;C:\Program Files\cvsnt;d:\programs\Mercurial;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\cygwin\bin;D:\programs\erl5.5.5\bin;C:\programs\Oracle\product\10.1.0\Client_1\bin;C:\programs\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;C:\programs\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\Program Files\ImageConverter Plus;C:\Program Files\OpenSSH\bin;C:\Program Files\Windows Imaging\;I:\sugarcrm-5.0.0f\mssql\shared\90\Tools\binn\;C:\Program Files\Common Files\Symbian\tools;C:\mobile\CSL Arm Toolchain\bin;D:\programs\Python25\Lib\site-pack;C:\MySQL\5.1\server\bin;D:\junk\jacob-1.14.3\jacob-1.14.3;C:\Parrot-1.0.0\bin;C:\Google\google_appengine_1_1_5;I:\mobile_installers\Symbian\Qt\4.4.4-temple\bin;d:\android-sdk-windows-1.0_r2\tools;C:\Program Files\Mozilla Firefox3;C:\Program Files\Git\bin
+Apr 8, 2009 12:00:49 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 12:00:49 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 504 ms
+Apr 8, 2009 12:00:49 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Apr 8, 2009 12:00:49 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.18
+Apr 8, 2009 12:00:51 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 12:00:51 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Apr 8, 2009 12:00:51 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/31  config=null
+Apr 8, 2009 12:00:51 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 2538 ms
+Apr 8, 2009 12:05:32 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-8080
+Apr 8, 2009 12:05:33 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Apr 8, 2009 12:05:33 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-8080

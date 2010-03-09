@@ -1,0 +1,3 @@
+2009-04-08 12:04:12,990 [http-8080-5] INFO  net.sourceforge.pebble.audit.AuditTrail  - anonymous : Blog entry "Welcome" (blogEntry/default/1239172452834) added
+2009-04-08 12:04:25,517 [http-8080-3] INFO  net.sourceforge.pebble.audit.AuditTrail  - username : Blog entry "My Blog" (blogEntry/default/1239172440000) added
+2009-04-08 12:04:27,032 [http-8080-5] INFO  net.sourceforge.pebble.audit.AuditTrail  - username : Blog entry "My Blog (Updated)" (blogEntry/default/1239172440000) changed

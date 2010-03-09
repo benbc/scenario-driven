@@ -1,0 +1,32 @@
+Mar 25, 2009 2:42:22 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+Mar 25, 2009 2:42:22 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Global resources are available
+Mar 25, 2009 2:42:22 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application at '/blog'
+Mar 25, 2009 2:42:23 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application at '/blog'
+Mar 25, 2009 2:45:13 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application at '/blog'
+Mar 25, 2009 2:45:14 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application at '/blog'
+Mar 25, 2009 2:54:28 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application at '/blog'
+Mar 25, 2009 2:54:28 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application at '/blog'
+Mar 25, 2009 3:09:20 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+Mar 25, 2009 3:09:20 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Global resources are available
+Mar 25, 2009 3:09:20 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application at '/blog'
+Mar 25, 2009 3:09:20 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application at '/blog'
+Mar 25, 2009 3:09:52 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application at '/blog'
+Mar 25, 2009 3:09:53 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application at '/blog'
+Mar 25, 2009 3:10:23 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application at '/blog'
+Mar 25, 2009 3:10:23 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application at '/blog'

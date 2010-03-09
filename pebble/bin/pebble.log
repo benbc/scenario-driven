@@ -1,0 +1,32 @@
+2009-04-08 12:04:12,241 [http-8080-5] WARN  net.sourceforge.pebble.security.DefaultSecurityRealm  - *** Creating default user (username/password)
+2009-04-08 12:04:12,241 [http-8080-5] WARN  net.sourceforge.pebble.security.DefaultSecurityRealm  - *** Don't forget to delete this user in a production deployment!
+2009-04-08 12:04:12,319 [http-8080-5] WARN  org.acegisecurity.intercept.AbstractSecurityInterceptor  - Could not validate configuration attributes as the MethodDefinitionSource did not return a ConfigAttributeDefinition Iterator
+2009-04-08 12:04:12,334 [http-8080-5] INFO  net.sourceforge.pebble.web.listener.PebbleContextListener  - Starting Pebble
+2009-04-08 12:04:12,334 [http-8080-5] INFO  net.sourceforge.pebble.domain.BlogManager  - Pebble blog directory does not exist - creating
+2009-04-08 12:04:12,537 [http-8080-5] INFO  net.sourceforge.pebble.index.StaticPageIndex  - Reading index from disk
+2009-04-08 12:04:12,569 [http-8080-5] INFO  net.sourceforge.pebble.domain.Theme  - Copying default theme to C:\Documents and Settings\tselvan\pebble\blogs\default\theme
+2009-04-08 12:04:12,647 [http-8080-5] INFO  net.sourceforge.pebble.domain.Blog  - Started blog with ID default
+2009-04-08 12:04:12,647 [http-8080-5] INFO  net.sourceforge.pebble.util.UpgradeUtilities  - Upgrading blog from null to 2.4rc
+2009-04-08 12:04:12,647 [http-8080-5] INFO  net.sourceforge.pebble.util.Utilities  - Restructuring static pages
+2009-04-08 12:04:12,647 [http-8080-5] INFO  net.sourceforge.pebble.util.Utilities  - Reindexing blog
+2009-04-08 12:04:12,647 [http-8080-5] INFO  net.sourceforge.pebble.domain.Blog  - Reindexing blog with ID default
+2009-04-08 12:04:12,694 [http-8080-5] INFO  net.sourceforge.pebble.domain.AbstractBlog  - Blog entries reindexed.
+2009-04-08 12:04:12,694 [http-8080-5] INFO  net.sourceforge.pebble.domain.AbstractBlog  - Static pages reindexed.
+2009-04-08 12:04:12,787 [http-8080-5] INFO  net.sourceforge.pebble.domain.Blog  - Stopped blog with ID default
+2009-04-08 12:04:12,787 [http-8080-5] INFO  net.sourceforge.pebble.index.StaticPageIndex  - Reading index from disk
+2009-04-08 12:04:12,834 [http-8080-5] INFO  net.sourceforge.pebble.domain.Blog  - Started blog with ID default
+2009-04-08 12:04:12,834 [http-8080-5] INFO  net.sourceforge.pebble.web.listener.PebbleContextListener  - Creating 'welcome note' blog entry for default
+2009-04-08 12:04:12,990 [http-8080-5] INFO  net.sourceforge.pebble.audit.AuditTrail  - anonymous : Blog entry "Welcome" (blogEntry/default/1239172452834) added
+2009-04-08 12:04:12,990 [http-8080-5] INFO  net.sourceforge.pebble.web.listener.PebbleContextListener  - Pebble started in 656ms
+2009-04-08 12:04:12,990 [http-8080-5] INFO  net.sourceforge.pebble.aggregator.NewsFeedContextListener  - Starting newsfeed updater
+2009-04-08 12:04:22,643 [http-8080-5] INFO  net.sourceforge.pebble.web.filter.BlogLookupFilter  - Setting Pebble URL to http://localhost:8080/blog
+2009-04-08 12:04:23,939 [http-8080-4] WARN  org.acegisecurity.event.authentication.LoggerListener  - Authentication event AuthenticationSuccessEvent: username; details: org.acegisecurity.ui.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: 8FFBA60014B76A7B2197DF976D0C480B
+2009-04-08 12:04:23,955 [http-8080-4] WARN  org.acegisecurity.event.authentication.LoggerListener  - Authentication event InteractiveAuthenticationSuccessEvent: username; details: org.acegisecurity.ui.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: 8FFBA60014B76A7B2197DF976D0C480B
+2009-04-08 12:04:25,517 [http-8080-3] INFO  net.sourceforge.pebble.audit.AuditTrail  - username : Blog entry "My Blog" (blogEntry/default/1239172440000) added
+2009-04-08 12:04:25,517 [http-8080-3] INFO  net.sourceforge.pebble.domain.AbstractBlog  - [username] Blog entry <a href="http://localhost:8080/blog/2009/04/08/1239172440000.html">My Blog</a> saved.
+2009-04-08 12:04:27,032 [http-8080-5] INFO  net.sourceforge.pebble.audit.AuditTrail  - username : Blog entry "My Blog (Updated)" (blogEntry/default/1239172440000) changed
+2009-04-08 12:04:27,032 [http-8080-5] INFO  net.sourceforge.pebble.domain.AbstractBlog  - [username] Blog entry <a href="http://localhost:8080/blog/2009/04/08/1239172440000.html">My Blog (Updated)</a> saved.
+2009-04-08 12:05:33,490 [main] INFO  net.sourceforge.pebble.aggregator.NewsFeedContextListener  - Stopping newsfeed updater
+2009-04-08 12:05:33,490 [main] INFO  net.sourceforge.pebble.web.listener.PebbleContextListener  - Stopping Pebble
+2009-04-08 12:05:33,568 [main] INFO  net.sourceforge.pebble.domain.Blog  - Stopped blog with ID default
+2009-04-08 12:05:33,568 [main] INFO  net.sourceforge.pebble.web.listener.PebbleContextListener  - Pebble stopped

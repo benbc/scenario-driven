@@ -10,3 +10,5 @@ pebble-audit.log
 pebble.log
 pebble/logs/*
 .~lock*
+workspace/Advanced\ Concepts\ in\ Twist/logs/
+workspace/Advanced\ Concepts\ in\ Twist/bin

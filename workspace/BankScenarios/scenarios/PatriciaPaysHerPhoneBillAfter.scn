@@ -3,10 +3,15 @@ Preconditions:"Patricia" exists,"Patricia" has "£22" in her "current" account,"
 Homepage:
 #"Patricia" goes to her homepage
 
-Transfers:
-#she transfers "£50" from her "savings" account to her "current" account
+Payments:
+#she goes to the payments page
+#she enters a payment of "£48" to "12345678" sort code "12-12-12"
+#she submits the payment
+#see sees that the payment has failed
 
-Homepage:
+Transfers, Homepage:
+#she goes to her homepage
+#she transfers "£50" from her "savings" account to her "current" account
 #she goes to her homepage
 #she sees that her "current" account balance is "£72"
 

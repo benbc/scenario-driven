@@ -25,4 +25,8 @@ public class Payments {
 	
 	}
 
+	public void seeSeesThatThePaymentHasFailed() throws Exception {
+	
+	}
+
 }

@@ -1,0 +1,20 @@
+Tags:
+Preconditions:"Patricia" exists,"Patricia" has "£22" in her "current" account,"Patricia" has at least "£50" in her "savings" account,The system is running
+Homepage:
+#"Patricia" goes to her homepage
+
+Transfers:
+#she transfers "£50" from her "savings" account to her "current" account
+
+Homepage:
+#she goes to her homepage
+#she sees that her "current" account balance is "£72"
+
+Payments:
+#she goes to the payments page
+#she enters a payment of "£48" to "12345678" sort code "12-12-12"
+#she submits the payment
+
+Homepage:
+#she goes to her homepage
+#she sees that her "current" account balance is "£24"

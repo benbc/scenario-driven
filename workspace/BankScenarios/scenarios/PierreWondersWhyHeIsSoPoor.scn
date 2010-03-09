@@ -1,0 +1,11 @@
+Tags:
+Preconditions:"Pierre" exists,"Pierre" has made "12" payments to "Amazon","Pierre" has made a "£132" payment to "Sevilla Mia",The system is running
+Homepage:
+#"Pierre" goes to his homepage
+
+Statements:
+#he looks at the statement for his "current" account
+#he examines his outgoings
+#he sees that his outgoings include a "£132" payment to "Sevilla Mia"
+#he sees that his outgoings include "12" payments to "Amazon"
+#he goes to the loan application page

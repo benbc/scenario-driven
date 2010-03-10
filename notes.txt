@@ -42,9 +42,6 @@ structure
    - two things to remember
 
 todo
- - first scenario: walking skeleton?
- - possibility of non-automated approach?
- - workflow vs actor layer?
  - sarah's comment: smoke tests
  - trailer for things to remember in intro
  - dan's feedback

@@ -42,7 +42,6 @@ structure
    - two things to remember
 
 todo
- - james' feedback
  - what changes to the application design
  - where do I actually want to refer to "do it like a human"?
  - code snippets when explaining architecture

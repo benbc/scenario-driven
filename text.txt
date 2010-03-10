@@ -21,7 +21,7 @@ more detail thoughout the talk. They are: "what you leave out of your
 tests is as important as what you put in" and "if in doubt about how
 to model something, do it like a human would".
 
-*[slide: red/green/refactor]
+[slide: red/green/refactor]
 
 My premise for this talk is that automated testing is good. Over the
 last ten years there has been massive growth of developer automated
@@ -33,14 +33,14 @@ to higher-level testing: to customer tests or acceptance tests (in my
 experience terms for different types of testing are the source of much
 disagreement; my solution is to use a different name altogether).
 
-*[slide: happy face]
+[slide: happy face]
 
 But those attempts have often been unsuccessful in the long term. My
 aim here is to codify what it is that can make such an attempt
 successful and how to avoid the pitfalls. The outcome of that
 codification is Scenario-Driven Development.
 
-*[slide: sad face]
+[slide: sad face]
 
 Before we talk about how to do it, let's briefly touch on how not to
 do it. The poster-child for unsuccessful approaches to automated
@@ -54,7 +54,7 @@ the indispensability of such an approach on a large team which was
 struggling to find a way to automate more testing; fortunately few
 people listened to me and the initiative died of natural causes.
 
-*[slide: lots of tests]
+[slide: lots of tests]
 
 The natural result of this approach is that you end up with a very
 large number of tests. This large number has three problems. Each one
@@ -73,7 +73,7 @@ unexpectedly. And debugging a failing test for a story that someone else
 implemented nine months ago, in a corner of the application that no one
 cares about any more is truly heart-breaking. So we give up.
 
-*[slide: few segregated tests]
+[slide: few segregated tests]
 
 The natural antidote to these problems is to cut your tests along a
 different grain. Instead of aligning them with the historical accident
@@ -85,7 +85,7 @@ functionality, so you have an opportunity to refactor them; it
 localizes breakages caused by changes to the way the application
 works; it makes the tests more discoverable.
 
-*[slide: many segregated tests]
+[slide: many segregated tests]
 
 But there are still problems. You are still likely to end up with a
 lot of tests (with attendant speed problems). There is no obvious way
@@ -101,7 +101,7 @@ tests not with functionality but with the activities that the
 application is designed to support; and be brutal in leaving things
 out of these tests, rather than trying to automate all acceptance criteria.
 
-*[slide: people]
+[slide: people]
 
 So we express the tests as a number of scenarios. Each one
 encapsulates an activity that the application supports and asserts
@@ -144,18 +144,18 @@ cluttering them with unhelpful details.
 
 Before I go any further, I want to acknowledge my sources.
 
-*[slide: story mapping]
+[slide: story mapping]
 
 The idea of scenarios as a way of framing the entire development
 process is closely related to story mapping; I recommend Jeff Patton's
 writing on the subject.
 
-*[slide: BDD]
+[slide: BDD]
 
 Scenario-Driven Development is a close cousin of Behaviour-Driven
 Development; many of my ideas are directly stolen from Dan North.
 
-*[slide: GOOS]
+[slide: GOOS]
 
 The technical approach that I use for implementing scenarios owes a
 lot to Nat Pryce and Steve Freeman's book which I wholeheartedly
@@ -221,7 +221,7 @@ The whole team is involved, to some extent, throughout the development
 process, collaborating and ensuring that everyone shares an
 understanding of where the application is headed.
 
-*[slide: money]
+[slide: money]
 
 The application the team is working on is an online banking app. It
 allows the bank's customers to see their statements, make payments,

@@ -1,6 +1,11 @@
 Intro
 -----
 
+Hello, my name is Ben Butler-Cole. I work for ThoughtWorks Studios
+which is the products arm of the agile consulting company
+ThoughtWorks. I'm very happy to take questions during the talk, so
+please do stop me if there is something you would like to ask.
+
 *[slide: Scenario-Driven Development]
 
 I'm going to talk today about Scenario-Driven
@@ -9,14 +14,12 @@ Test-Driven Development to include the entire application, rather than
 just individual units of code, and the process of the entire team,
 rather than just developers' story implementation.
 
-I'm going to talk at length about the practice of implementing
-Scenario-Driven Development. Taken to the extremes that I advocate, it
-is a rather ambitious change to the way many teams develop software. I
-hope to convince you that it is the correct approach, but I know that
-I may not succeed. However there are two points that I want to get
-make which are more generally applicable -- the Main Ideas that I
-really want you to remember from this talk. I shall flag them clearly
-as I go along.
+There are a couple of general principles that I have found useful when
+dealing with some of the issues that come up in trying to put this
+approach into practice. I'll trail them here and then mention them in
+more detail thoughout the talk. They are: "what you leave out of your
+tests is as important as what you put in" and "if in doubt about how
+to model something, do it like a human would".
 
 *[slide: red/green/refactor]
 
@@ -26,7 +29,7 @@ unit testing which has brought huge benefits to the entire development
 process. The key to making the most of unit testing seems to be
 allowing it to drive the writing of the code: TDD. Lots of teams that
 I have been part of, and heard of, have tried to extend those benefits
-to higher-level testing: to functional or acceptance tests (in my
+to higher-level testing: to customer tests or acceptance tests (in my
 experience terms for different types of testing are the source of much
 disagreement; my solution is to use a different name altogether).
 
@@ -385,11 +388,11 @@ account. The payment fails and she sees a message explaining why.
 Note that this updated scenario doesn't reflect all the acceptance
 criteria on the story. This is one of the points where you have to be
 careful when deciding what to put into the scenarios (and this is one
-of the two Main Ideas that I want to pass on to you today -- that what
-you leave out of your tests is as important as what you put in). We
-don't test that no money has come out of the account; we don't check
-that the fields are all still filled in (we also don't have a test for
-the edge case of bringing the balance down to zero).
+of the two principles that I mentioned at the start -- that what you
+leave out of your tests is as important as what you put in). We don't
+test that no money has come out of the account; we don't check that
+the fields are all still filled in (we also don't have a test for the
+edge case of bringing the balance down to zero).
 
 This is not to say that these acceptance criteria will not have
 automated tests. They will, but those tests will be lower-level tests,
@@ -537,8 +540,7 @@ the clearest, high-level, localized statement of what the application
 I want to take a slightly philosophical diversion now. I hope that
 you'll bear with me. I find this approach invaluable for appreciating
 the utility of scenarios (and incidentally for understanding all sorts
-of things that can go wrong with projects). This analysis is the
-second Main Idea that I would like to you take from this talk.
+of things that can go wrong with projects).
 
 Any application has a notional, abstract form which captures what the
 application *is*, it's essence. Unfortunately this essence isn't
@@ -738,9 +740,9 @@ extremely slow and somewhat brittle as it introduces dependencies in
 every test on the common bits of the UI required for that
 setup. Instead this kind of fixture code should be allowed to "cheat"
 in whatever way is necessary to keep it lightning fast and avoid
-brittleness. (This is an other example of my first Main Idea: what
-you leave out of the tests is crucial.) The description of the fixture
-in the test is kept minimal and very declarative; the code underneath
+brittleness. (This is an other example the principle that what you
+leave out of the tests is crucial.) The description of the fixture in
+the test is kept minimal and very declarative; the code underneath
 needs to be smart enough to work out what needs doing and an efficient
 way of doing it.
 
@@ -751,14 +753,90 @@ scenarios clearer if *all* the fixture required for them to run is
 defined within the scenario itself, rather that being shared amongst
 scenarios (in the standard setup/teardown pattern).
 
+*[slide: tests] 
+
+Finally it's worth mentioning the other kinds of tests that a team may
+need and how they relate to the scenarios. Because scenario tests cut
+across functional areas, there may be many scenarios which use a
+single common piece of functionality. If this breaks it will cause all
+the scenarios to break which gives no clue as to what went wrong. A
+example of this might be the home page of the banking application I
+talked about earlier. To cover such cases it is useful to have a small
+set of carefully chosen smoke tests. These are end-to-end tests,
+driving the whole application that check that the application is
+running and that really basic functionality works. By running these
+tests before the scenarios you can catch fundamental problems early in
+the CI pipeline.
+
+I already mentioned unit tests; if your code is well factored and
+application-level policy is the clear responsibility of individual
+classes, it may often be reasonable to test some acceptance criteria
+in the unit tests, with testers and developers collaborating to write
+them. This fills an apparent hole in the automated testing strategy
+caused by refusing to automate all the acceptance criteria in your
+scenarios. To be successful this requires a high degree of trust
+between testers and developers.
+
+Another thing I told to leave out of your scenario tests was
+comprehensive edge-case testing. There is a risk that this tactic will
+result in the testers having to do a lot of repetitive, time-consuming
+testing themselves. I would like to take that off their hands by
+writing a set of tests specifically and exclusively designed to
+automate away that kind of tedium and leave them time for other
+things. I would probably use some of the scenario test infrastructure
+to reduce the fragility of these tests, but their content would be
+purely owned by the testers and they wouldn't have the kind of
+semantic role that scenarios do.
+
 Twist Demo
 ----------
 
-TODO segue
+Now I have talked to you at great length without showing you much in
+the way of working code. I don't think any half-way technical talk is
+complete without some live coding that might go wrong. So I'm going to
+show you ThoughtWorks Studios' refactoring IDE for tests, Twist -- and
+see if I can't screw something up for your entertainment.
 
-TODO script for demo
+Twist is designed to allow just the kind of collaborative testing that
+I've been discussing today. It allows you to define scenarios in
+English and then maps the steps in the scenario workflow onto code
+automatically. In that respect it is close relative of Fitnesse. But
+it goes beyond that to provide the kind of intelligent editing and
+refactoring tools that we have come to expect from our IDEs.
+
+   - show scenario
+     - workflow
+     - context
+     - tags
+     - run (mention drivers)
+   - navigation
+   - add steps
+     - reuse
+     - unimplemented
+     - implement
+     - record
+   - refactoring
+     - extract concept
+     - rephrase
 
 Outro
 -----
 
-TODO summary
+I hope you have found that useful. My experience of this approach is
+that it really is the only viable way to do automated acceptance
+testing and that, once you adopt it, the benefits extend far beyond
+test automation and bring a new quality to the collaboration within a
+team.
+
+If you are interested in seeing more of Twist, then please come to the
+ThoughtWorks stand in the hall downstairs and someone will be glad to
+give you a demo.
+
+ThoughtWorks are involved in a project to help reunite children lost
+in disaster zones with their families. We're going to be running some
+code jams for anyone who wants to get involved, please grab me or go
+to our stand for more details.
+
+Does anyone have any more questions they would like to ask? If there
+is something you would like to talk about in more detail, then please
+grab me afterwards now or later in the hall.

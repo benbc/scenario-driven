@@ -6,7 +6,7 @@ which is the products arm of the agile consulting company
 ThoughtWorks. I'm very happy to take questions during the talk, so
 please do stop me if there is something you would like to ask.
 
-*[slide: Scenario-Driven Development]
+[slide: Scenario-Driven Development]
 
 I'm going to talk today about Scenario-Driven
 Development. Scenario-Driven Development is an extension of
@@ -564,7 +564,7 @@ to which the members of a team share a view of this essence (and the
 extent to which their view is clear and complete) is a strong
 indicator of the success of a project.
 
-*[slide: essence and projections]
+[slide: essence and projections]
 
 We can't see the essence, but we can see *projections* of it into
 various media. Each of these projections is incomplete and distorted,
@@ -786,6 +786,8 @@ semantic role that scenarios do.
 
 Twist Demo
 ----------
+
+[slide: twist logo]
 
 Now I have talked to you at great length without showing you much in
 the way of working code. I don't think any half-way technical talk is

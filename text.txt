@@ -511,7 +511,7 @@ that they will be querying. This forces us to consider testability at
 the application and UI level in the same way that TDD does at the
 object level.
 
-*[slide: driving everything]
+[slide: driving everything]
 
 Driving everything
 ------------------
@@ -522,14 +522,14 @@ that sketching out a candidate set of activities that the application
 will support should be pretty much the first piece of analysis that is
 carried out on a project.
 
-*[slide: bethany, cesar, activities and scenarios]
+[slide: bethany, cesar, activities and scenarios]
 
 This set of activities, and the scenarios that illustrate them, act as
 a manifesto for the project. They enable the customers to clarify what
 they want from the application and provide a vision for the
 application which is shared amongst the team.
 
-*[slide: activities, scenarios and team]
+[slide: activities, scenarios and team]
 
 The scenarios are not *just* *tests*. Their identity, purpose and flow
 should be familiar to everyone on the team; and the team, including
@@ -551,13 +551,13 @@ correct and they can't adapt as we learn things during
 development. Instead of being able to point at the essence, it has to
 be taken on trust.
 
-*[slide: team and views]
+[slide: team and views]
 
 Parvinder and Bethany and Terrence and Doreen and Delilah and Dave and
 Cesar all have their own view of what this essence is, their own
 mental models of the applications.
 
-*[slide: team and single view]
+[slide: team and single view]
 
 I suspect that, if we could measure it, we would find that the extent
 to which the members of a team share a view of this essence (and the
@@ -753,7 +753,7 @@ scenarios clearer if *all* the fixture required for them to run is
 defined within the scenario itself, rather that being shared amongst
 scenarios (in the standard setup/teardown pattern).
 
-*[slide: tests] 
+[slide: tests] 
 
 Finally it's worth mentioning the other kinds of tests that a team may
 need and how they relate to the scenarios. Because scenario tests cut

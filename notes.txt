@@ -41,13 +41,15 @@ structure
    - sdd summary
    - two things to remember
 
-new
- - first scenario: walking skeleton
- - possibility of non-automated approach
- - workflow vs actor layer
+todo
+ - first scenario: walking skeleton?
+ - possibility of non-automated approach?
+ - workflow vs actor layer?
  - sarah's comment: smoke tests
  - trailer for things to remember in intro
  - dan's feedback
  - james' feedback
  - what changes to the application design
  - refer to 'customer tests'
+ - new Main Point: do it like a human
+ - code snippets when explaining architecture

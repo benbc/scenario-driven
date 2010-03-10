@@ -11,7 +11,7 @@ rather than just developers' story implementation.
 
 I'm going to talk at length about the practice of implementing
 Scenario-Driven Development. Taken to the extremes that I advocate, it
-is a rather ambitious change to the way many team develop software. I
+is a rather ambitious change to the way many teams develop software. I
 hope to convince you that it is the correct approach, but I know that
 I may not succeed. However there are two points that I want to get
 make which are more generally applicable -- the Main Ideas that I
@@ -25,7 +25,7 @@ last ten years there has been massive growth of developer automated
 unit testing which has brought huge benefits to the entire development
 process. The key to making the most of unit testing seems to be
 allowing it to drive the writing of the code: TDD. Lots of teams that
-I have been part of and heard of have tried to extend those benefits
+I have been part of, and heard of, have tried to extend those benefits
 to higher-level testing: to functional or acceptance tests (in my
 experience terms for different types of testing are the source of much
 disagreement; my solution is to use a different name altogether).
@@ -48,8 +48,8 @@ of the story is automated (to the extent that is practical). I have
 never seen this approach succeed, although I have been desperate for
 it to do so. Not many years ago I could be heard loudly proclaiming
 the indispensability of such an approach on a large team which was
-struggling to find a way of automating testing; fortunately few people
-listened to me and the initiative died of natural causes.
+struggling to find a way to automate more testing; fortunately few
+people listened to me and the initiative died of natural causes.
 
 *[slide: lots of tests]
 
@@ -175,8 +175,8 @@ First, let me introduce you to the team.
 [slide: Parvinder]
 
 This is Parvinder, the project manager; he spends a lot of time
-worrying and fiddling with spreadsheets -- we won't have much more to
-do with him.
+worrying (justifiably) and fiddling with spreadsheets -- we won't have
+much more to do with him.
 
 [slide: Bethany]
 
@@ -262,14 +262,14 @@ This is the "Patricia Pays Her Phone Bill" scenario.
   # She sees that her current account balance is £24.
 
 It describes a customer, Patricia, transferring the money from a
-savings account to her current account entering the payment details,
+savings account to her current account, entering the payment details,
 submitting it and finally going back to her home page to see that her
 account has been debited. When this scenario is run it will, through
 the magic of code, get the application into the right state for the
 scenario, drive the application through the workflow and ensure that
 it behaves as expected.
 
-This context describes the necessary prerequisites for the scenario to
+The context describes the necessary prerequisites for the scenario to
 run: the application is running, Patricia is provisioned on the system
 and has enough money in her account to make the payment successfully.
 
@@ -355,8 +355,9 @@ order to make the payment. Here's an opportunity to exercise this new
 functionality: Patricia can try to make the payment before there is
 enough money in her current account to do so.
 
-But the story does not affect on the "Pierre Wonders Why He Is So Poor"
-scenario. (Although it does affect the "Pierre Tries To Save Up For A
+But the story does not affect the "Pierre Wonders Why He Is So Poor"
+scenario, because Pierre has given up trying to pay any
+bills. (Although it does affect the "Pierre Tries To Save Up For A
 Car" scenario. Poor Pierre.)
 
 Note that we probably don't want to create a new failing payment
@@ -401,7 +402,7 @@ it supports.
 [slide: team and scenario]
 
 One thing people say about Test-Driven Development is that "it's not
-about the tests", it's about the rigour of the process and the design
+about the tests", it's about the discipline of the process and the design
 that the tests drive out. In the same way you could say that Scenario
 Drive Development isn't about the tests, it's about the shared
 understanding of the system that they bring to the team. Obviously the
@@ -424,7 +425,7 @@ refactor normal code. I'll talk more about Twist later and show it to
 you in action. I'll also talk about other technologies that can be
 used.
 
-So right now, in our story, this scenario *fails*. In fact it doesn't
+So right now, in our tale, this scenario *fails*. In fact it doesn't
 even compile.
 
 [slide: developers and scenario]
@@ -446,29 +447,29 @@ workflow layer which models the process of using the application. In
 our scenario when we see Patricia going to the payments page, this
 maps onto a method in a workflow. The workflow layer is an
 implementation of the concepts needed for defining the scenarios. It
-is written in terms of a application model; for a GUI application this
-is typically written as a number of page or screen objects, each one
-of which represents a single page in the application (or screen for a
-thick client). This page model captures how the user interacts with
-the pages and what the flow between them looks like. It hides the
+is written in terms of an application model; for a GUI application
+this is typically written as a number of page or screen objects, each
+one of which represents a single page in the application (or screen
+for a thick client). This page model captures how the user interacts
+with the pages and what the flow between them looks like. It hides the
 details of the code that we are using to drive the application. For
 example in a web application, the page objects have an interface
 written in terms of what the user sees (buttons clicked, fields filled
 in, links followed), whereas its implementation is written in terms of
 HTML elements and XPath expressions. This implementation will
 typically use a library designed for driving GUI apps, like Selenium,
-Watir, White or Abbot.
+WebDriver, Watir, White or Abbot.
 
 Let's look at who has responsibility for these layers.
 
 *[slide: bethany, terrence and scenario layer]
 
 Bethany (the business analyst) and Terrence are responsible for the
-contents of the scenario layer. Terrence can change the scenarios as
-he needs to. If his changes are already supported by the workflow
-layer then he's done. (Of course the tests will probably fail when
-they're changed, but the developers only have to concern themselves
-with the application code.)
+content of the scenario layer. Terrence can change the scenarios as he
+needs to. If his changes are already supported by the workflow layer
+then he's done. (Of course the tests will probably fail when they're
+changed, but the developers only have to concern themselves with the
+application code.)
 
 *[slide: terrence, developer and workflow layer]
 
@@ -566,8 +567,8 @@ various media. Each of these projections is incomplete and distorted,
 because of the nature of the media into which it is made. When you
 project a three-dimension object into two-dimensional space in order
 to draw it, you make a decision about how to make the projection in
-order to best show what you want. But which ever projection you chose
-distorts the original object to some extent, misrepresents it and
+order to best show what you want. But whichever projection you chose,
+it distorts the original object to some extent, misrepresents it and
 leaves out some details.
 
 The most obvious projection of an application's essence is the code;
@@ -604,9 +605,9 @@ of the documentation need to be updated.
 
 And of course the scenarios are just one more projection. But they are
 an interesting one. They are rather abstracted from the details of the
-implementation. They are a projection into a rather rarified medium
-which exists only to accommodate that project. And they are shared
-amongst the entire team, written in a language that everyone can
+implementation. They are a projection into a rarified medium which
+exists only to accommodate that project. And they are shared amongst
+the entire team, written in a language that everyone can
 understand. When a new story is played, everyone should agree on the
 affect of it on the scenarios, rather than having their own private
 view. So perhaps the scenarios are the closest thing we have to a
@@ -669,13 +670,12 @@ scenario. I think this is a good idea anyway as it allows you to get
 more immediate feedback on the story, before it is finished, from
 testers and even from the business analyst and customer.
 
-You can mark "in progress" scenarios in some way, with a tag
-or by moving them to a different folders; the build is modified so
-that failing "in progress" scenarios don't fail the whole
-build. Having written the scenario at the start of a story's
-development and seen it fail in the way you expect, you could
-temporarily modify it to remove the failing assertion (for example by
-commenting it out).
+You can mark "in progress" scenarios in some way, with a tag or by
+moving them to a different folder; the build is modified so that
+failing "in progress" scenarios don't fail the whole build. Or, having
+written the scenario at the start of a story's development and seen it
+fail in the way you expect, you could temporarily modify it to remove
+the failing assertion (for example by commenting out the assertion).
 
 Or you could modify the scenario to assert that the expected failure
 happens. Although I haven't yet had a chance to try this, this is the
@@ -725,7 +725,7 @@ requiring developers to make significant changes to it.
 
 The part of the code supporting the scenarios that often needs most
 attention, design and rework is the fixture code. The main workflow of
-the scenarios themselves drive the application as the user would, so
+the scenarios themselves drives the application as the user would, so
 the code to support that is a fairly simple model of the application's
 interface. But the fixture required to allow the scenarios to be run
 is often extensive: systems need to be running, users need to be
@@ -749,7 +749,7 @@ where that data is truly common (for example locale-specific data that
 would appear in the running application). And it makes individual
 scenarios clearer if *all* the fixture required for them to run is
 defined within the scenario itself, rather that being shared amongst
-scenarios (in the standard setup/teardown patter).
+scenarios (in the standard setup/teardown pattern).
 
 Twist Demo
 ----------

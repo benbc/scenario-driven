@@ -564,6 +564,8 @@ to which the members of a team share a view of this essence (and the
 extent to which their view is clear and complete) is a strong
 indicator of the success of a project.
 
+*[slide: essence and projections]
+
 We can't see the essence, but we can see *projections* of it into
 various media. Each of these projections is incomplete and distorted,
 because of the nature of the media into which it is made. When you
@@ -580,22 +582,16 @@ complete (it doesn't include the behaviour of the people who use the
 software, or the environment that it runs in). And there maybe so much
 of it that it isn't clear what the sum of the parts comes to.
 
-*[slide: essence and projections]
-
 All the team members have a greater or lesser familiarity with various
 other projections, which include the documentation, the unit tests,
 maybe even the marketing material. The complete set of implemented
 stories is another projection.
-
-*[slide: essence and story]
 
 An individual story can be seen as a delta to the essence. A
 well-written story steers clear of talking about the implementation;
 in a team where the UI design work is incorporated into the
 development it may even avoid too many details about the interface. So
 what it talks about is the essence.
-
-*[slide: projections and story]
 
 And when any member of the team reads the story they naturally project
 that essence into the medium that they are most familiar with. The UI
@@ -616,7 +612,7 @@ view. So perhaps the scenarios are the closest thing we have to a
 faithful projection of the essence (although of course we pay a price
 in the paucity of detail).
 
-*[slide: evolving scenarios]
+[slide: evolving scenarios]
 
 The process of developing an application can be framed in terms of
 elaboration of the application's scenarios. The identity of the
@@ -652,7 +648,7 @@ that he can test) and what has not yet been implemented. This way, by
 the time the developers are finished (or a very short while after) the
 tester is finished with the story too.
 
-*[slide: broken scenarios]
+[slide: broken scenarios]
 
 Another issue concerning team collaboration is what to do with the
 scenarios that are affected by a story, while that story is under
@@ -691,7 +687,7 @@ creep in because it is being temporarily ignored.
 
 The remaining concerns are technical.
 
-*[slide: drive points]
+[slide: drive points]
 
 One major decision in any high-level test like these scenarios is how
 much of the system do we test. Should we drive the application through
@@ -723,7 +719,7 @@ code with a standard unit testing framework, making an effort to
 ensure that the code is readable to non-developers, but generally
 requiring developers to make significant changes to it.
 
-*[slide: architecture with fixtures]
+[slide: architecture with fixtures]
 
 The part of the code supporting the scenarios that often needs most
 attention, design and rework is the fixture code. The main workflow of

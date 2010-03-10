@@ -443,7 +443,7 @@ to stop and talk about how the test harness for the scenarios is
 structured. The approach I'm going to describe is roughly technology
 agnostic.
 
-*[slide: architecture]
+[slide: architecture]
 
 The top layer is the scenarios themselves. They sit on top of a
 workflow layer which models the process of using the application. In
@@ -465,7 +465,7 @@ WebDriver, Watir, White or Abbot.
 
 Let's look at who has responsibility for these layers.
 
-*[slide: bethany, terrence and scenario layer]
+[slide: bethany, terrence and scenario layer]
 
 Bethany (the business analyst) and Terrence are responsible for the
 content of the scenario layer. Terrence can change the scenarios as he
@@ -474,7 +474,7 @@ then he's done. (Of course the tests will probably fail when they're
 changed, but the developers only have to concern themselves with the
 application code.)
 
-*[slide: terrence, developer and workflow layer]
+[slide: terrence, developer and workflow layer]
 
 The implementation of the workflow layer in terms of the application
 model is also Terrence's domain. He cares that the application model
@@ -485,21 +485,21 @@ tell apart). Between them they will ensure that the code accurately
 models the application and that it is reasonably efficient and easy to
 implement in the layer below.
 
-*[slide: developers and application model]
+[slide: developers and application model]
 
 After that it's developers all the way down. The developers own the
 code in the application model and of course the application itself.
 
-*[slide: terrence, developer and architecture]
+[slide: terrence, developer and architecture]
 
 So during the development of a story, Delilah first pairs with
 Terrence to fill in the code under the scenario,
 
-*[slide: developers and application model]
+[slide: developers and application model]
 
 then she pairs with Dave to finish the test code.
 
-*[slide: developers and application]
+[slide: developers and application]
 
 Finally they turn to the application code.
 

@@ -14,13 +14,6 @@ Test-Driven Development to include the entire application, rather than
 just individual units of code, and the process of the entire team,
 rather than just developers' story implementation.
 
-There are a couple of general principles that I have found useful when
-dealing with some of the issues that come up in trying to put this
-approach into practice. I'll trail them here and then mention them in
-more detail thoughout the talk. They are: "what you leave out of your
-tests is as important as what you put in" and "if in doubt about how
-to model something, do it like a human would".
-
 [slide: red/green/refactor]
 
 My premise for this talk is that automated testing is good. Over the
@@ -96,10 +89,15 @@ a consequent slide back to one-test-per-story. And there is no
 alignment of the tests with the team's (and the customer's)
 understanding of the application.
 
-The solution to all these problems seems to be two-fold: align the
-tests not with functionality but with the activities that the
-application is designed to support; and be brutal in leaving things
-out of these tests, rather than trying to automate all acceptance criteria.
+The solution to all these problems follows two principles which I find
+endlessly applicable and which will come up again again in this talk:
+"what you leave out of your tests is as important as what you put in"
+and "if in doubt about how to model something, do it like a human
+would". How should our tests drive the application? Like a human
+would, stepping through a realistic sequence of actions. How do we
+ensure that our tests run fast and don't multiply beyond all reason?
+Be brutal in leaving things out of these tests, rather than trying to
+automate all acceptance criteria.
 
 [slide: people]
 
@@ -112,12 +110,12 @@ provide a solution to the problem of acceptance tests by boiling them
 down to a simple description of the most important aspects of the
 system, in a language that makes sense to the people who use it.
 
-The technique of Scenario-Driven Development that I am advocating goes
-beyond that, though. I believe that in the same way we use unit tests
-in TDD to drive the design of the code, we should use scenarios to
-frame the development of the whole application. They become a tool for
-collaboration amongst the entire team and help shape a shared
-understanding within the team of what it is they are developing.
+The technique that I am advocating goes beyond that, though. I believe
+that in the same way we use unit tests in TDD to drive the design of
+the code, we should use scenarios to frame the development of the
+whole application. They become a tool for collaboration amongst the
+entire team and help shape a shared understanding within the team of
+what it is they are developing.
 
 In order to be successful in this role, the scenario tests have to
 have several properties. Their technical properties address the
@@ -142,25 +140,6 @@ workflow that they describe must be carefully chosen to give the right
 impression without unnecessarily constraining the application or
 cluttering them with unhelpful details.
 
-Before I go any further, I want to acknowledge my sources.
-
-[slide: story mapping]
-
-The idea of scenarios as a way of framing the entire development
-process is closely related to story mapping; I recommend Jeff Patton's
-writing on the subject.
-
-[slide: BDD]
-
-Scenario-Driven Development is a close cousin of Behaviour-Driven
-Development; many of my ideas are directly stolen from Dan North.
-
-[slide: GOOS]
-
-The technical approach that I use for implementing scenarios owes a
-lot to Nat Pryce and Steve Freeman's book which I wholeheartedly
-recommend to all developers.
-
 Example
 -------
 
@@ -168,10 +147,10 @@ Example
 
 *Project*
 
-I'm going to talk through how Scenario-Driven Development works in
-practice. I want to put that into a realistic context, so I'm going to
-describe an example project and explain how the team uses scenarios to
-frame their development process.
+I'm going to talk through how this approach works in practice. I want
+to put that into a realistic context, so I'm going to describe an
+example project and explain how the team uses scenarios to frame their
+development process.
 
 First, let me introduce you to the team.
 
@@ -231,11 +210,8 @@ all the usual sort of stuff.
 
 [slide: scenario]
 
-As well as unit tests, and the odd integration test to check the
-interaction between their code and external systems, the team has a
-set of scenario tests which describe the main activities that the
-application supports. I'm going to show you a couple of their
-scenarios.
+The team has a set of scenario tests which describe the main
+activities that the application supports.
 
 [slide: team and scenario]
 
@@ -250,19 +226,6 @@ automate the scenarios.
 This is the "Patricia Pays Her Phone Bill" scenario.
 
 [slide: twist screenshot]
-
-{ Patricia exists. }
-{ Patricia has £22 in her current account. }
-{ Patricia has at least £50 in her savings account. }
-{ The system is running. }
-  # Patricia goes to her home page.
-  # She transfers £50 from her savings account to her current account.
-  # She sees that her current account balance is £72.
-  # She goes to the payments page.
-  # She enters a payment of £48 to 12345678, sort code 12-12-12.
-  # She submits the payment.
-  # She goes to her home page.
-  # She sees that her current account balance is £24.
 
 It describes a customer, Patricia, transferring the money from a
 savings account to her current account, entering the payment details,
@@ -280,18 +243,6 @@ And here is another scenario: "Pierre Wonders Why He Is So
 Poor".
 
 [slide: twist screenshot] 
-
-{ Pierre exists. }
-{ Pierre has made 12 payments to Amazon. }
-{ Pierre has made a £132 payment to Sevilla Mia. }
-{ The system is running. }
-# Pierre goes to his home page.
-# Pierre looks at the statement for his current account.
-# Pierre examines his outgoings.
-# Pierre sees that his outgoings include a £132 payment to Sevilla
-  Mia.
-# Pierre sees that his outgoings include 12 payments to Amazon.
-# Pierre goes to the loan application page.
 
 Pierre looks at the statement for his account, filters it to
 show out-goings only, gives a little moan of despair and then follows
@@ -386,13 +337,11 @@ the payment before she has transferred the money from her savings
 account. The payment fails and she sees a message explaining why.
 
 Note that this updated scenario doesn't reflect all the acceptance
-criteria on the story. This is one of the points where you have to be
-careful when deciding what to put into the scenarios (and this is one
-of the two principles that I mentioned at the start -- that what you
-leave out of your tests is as important as what you put in). We don't
-test that no money has come out of the account; we don't check that
-the fields are all still filled in (we also don't have a test for the
-edge case of bringing the balance down to zero).
+criteria on the story. Once again: what you leave out of your tests is
+as important as what you put in. We don't test that no money has come
+out of the account; we don't check that the fields are all still
+filled in (we also don't have a test for the edge case of bringing the
+balance down to zero).
 
 This is not to say that these acceptance criteria will not have
 automated tests. They will, but those tests will be lower-level tests,
@@ -402,15 +351,7 @@ clutter up the scenarios with details and edge cases. We want them to
 be a clear description of the intent of the system and the activities
 it supports.
 
-[slide: team and scenario]
-
-One thing people say about Test-Driven Development is that "it's not
-about the tests", it's about the discipline of the process and the design
-that the tests drive out. In the same way you could say that Scenario
-Drive Development isn't about the tests, it's about the shared
-understanding of the system that they bring to the team. Obviously the
-automated tests that are a byproduct of both approaches are extremely
-valuable and we wouldn't want to be without them.
+-[slide: team and scenario]
 
 [slide: updated scenario]
 

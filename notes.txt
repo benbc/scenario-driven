@@ -45,3 +45,6 @@ todo
  - what changes to the application design
  - where do I actually want to refer to "do it like a human"?
  - code snippets when explaining architecture
+ - scenarios stay fairly constant throughout project -- they are elaborated
+ - move all references to unit tests to fill gaps in acceptance criteria to 'other tests' section at end
+

@@ -47,4 +47,6 @@ todo
  - code snippets when explaining architecture
  - scenarios stay fairly constant throughout project -- they are elaborated
  - move all references to unit tests to fill gaps in acceptance criteria to 'other tests' section at end
+ - remove acknowledgements slides
+ - remove duplication between action -> scenario stuff and earlier exposition of where scenarios come from
 

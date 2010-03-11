@@ -529,10 +529,8 @@ maybe even the marketing material. The complete set of implemented
 stories is another projection.
 
 An individual story can be seen as a delta to the essence. A
-well-written story steers clear of talking about the implementation;
-in a team where the UI design work is incorporated into the
-development it may even avoid too many details about the interface. So
-what it talks about is the essence.
+well-written story steers clear of talking about the
+implementation: what it talks about is the essence.
 
 And when any member of the team reads the story they naturally project
 that essence into the medium that they are most familiar with. The UI
@@ -658,7 +656,7 @@ FitNesse (where tests are defined in wiki pages) and Cucumber, a DSL
 designed for BDD-style testing. I have most frequently used plain old
 code with a standard unit testing framework, making an effort to
 ensure that the code is readable to non-developers, but generally
-requiring developers to make significant changes to it.
+requiring developers to make any significant changes to it.
 
 [slide: architecture with fixtures]
 
@@ -677,7 +675,7 @@ extremely slow and somewhat brittle as it introduces dependencies in
 every test on the common bits of the UI required for that
 setup. Instead this kind of fixture code should be allowed to "cheat"
 in whatever way is necessary to keep it lightning fast and avoid
-brittleness. (This is an other example the principle that what you
+brittleness. (This is another example the principle that what you
 leave out of the tests is crucial.) The description of the fixture in
 the test is kept minimal and very declarative; the code underneath
 needs to be smart enough to work out what needs doing and an efficient
@@ -773,9 +771,9 @@ give you a demo.
 
 ThoughtWorks are involved in a project to help reunite children lost
 in disaster zones with their families. We're going to be running some
-code jams for anyone who wants to get involved, please grab me or go
-to our stand for more details.
+code jams next week for anyone who wants to get involved, please grab
+me or go to our stand for more details.
 
 Does anyone have any more questions they would like to ask? If there
 is something you would like to talk about in more detail, then please
-grab me afterwards now or later in the hall.
+grab me afterwards, now or later in the hall.

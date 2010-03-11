@@ -22,9 +22,7 @@ unit testing which has brought huge benefits to the entire development
 process. The key to making the most of unit testing seems to be
 allowing it to drive the writing of the code: TDD. Lots of teams that
 I have been part of, and heard of, have tried to extend those benefits
-to higher-level testing: to customer tests or acceptance tests (in my
-experience terms for different types of testing are the source of much
-disagreement; my solution is to use a different name altogether).
+to higher-level testing: to customer tests or acceptance tests.
 
 [slide: happy face]
 

@@ -343,13 +343,11 @@ out of the account; we don't check that the fields are all still
 filled in (we also don't have a test for the edge case of bringing the
 balance down to zero).
 
-This is not to say that these acceptance criteria will not have
-automated tests. They will, but those tests will be lower-level tests,
-maybe unit tests, targeted at the components of the system responsible
-for enforcing the behaviour. The main reason is that we don't want to
-clutter up the scenarios with details and edge cases. We want them to
-be a clear description of the intent of the system and the activities
-it supports.
+I'll talk later about how you can fill this gap in testing the
+acceptance criteria. The main reason for leaving things out is that we
+don't want to clutter up the scenarios with details and edge cases. We
+want them to be a clear description of the intent of the system and
+the activities it supports.
 
 -[slide: team and scenario]
 
@@ -555,12 +553,13 @@ in the paucity of detail).
 
 The process of developing an application can be framed in terms of
 elaboration of the application's scenarios. The identity of the
-scenarios remains roughly constant during development, but their
-content evolves. That evolution, and the particular scenarios that are
-evolving, provide themes for the team during a project. "This
-iteration we are going to fill in the details of the recurring
-payments scenario." "This release focuses on improving the useability
-of the admin scenarios."
+scenarios remains roughly constant during development; new scenarios
+are only created if the direction of application development changes
+significantly, but their content evolves. That evolution, and the
+particular scenarios that are evolving, provide themes for the team
+during a project. "This iteration we are going to fill in the details
+of the recurring payments scenario." "This release focuses on
+improving the useability of the admin scenarios."
 
 Concerns
 --------
@@ -571,21 +570,7 @@ approach.
 
 *Collaboration*
 
-[slide: terrence and developers]
-
-Earlier I described a close collaboration between testers and
-developers, pairing to write the code behind the scenarios. I would
-like to take that collaboration further and maintain it throughout the
-development of a story. I talked about leaving some aspects of the
-story's acceptance criteria to be tested by lower-level tests -- unit
-tests, integration tests. As well as pairing on the scenarios,
-developers and testers can pair on writing these tests, to give the
-tester confidence that the tests do what they need to. And as the
-story is implemented, piece by piece, the developers let the tester
-know what has been checked in, what should be working correctly (and
-that he can test) and what has not yet been implemented. This way, by
-the time the developers are finished (or a very short while after) the
-tester is finished with the story too.
+-[slide: terrence and developers]
 
 [slide: broken scenarios]
 
@@ -703,14 +688,13 @@ running and that really basic functionality works. By running these
 tests before the scenarios you can catch fundamental problems early in
 the CI pipeline.
 
-I already mentioned unit tests; if your code is well factored and
-application-level policy is the clear responsibility of individual
-classes, it may often be reasonable to test some acceptance criteria
-in the unit tests, with testers and developers collaborating to write
-them. This fills an apparent hole in the automated testing strategy
-caused by refusing to automate all the acceptance criteria in your
-scenarios. To be successful this requires a high degree of trust
-between testers and developers.
+If your code is well factored and application-level policy is the
+clear responsibility of individual classes, it may often be reasonable
+to test some acceptance criteria in the unit tests, with testers and
+developers collaborating to write them. This fills an apparent hole in
+the automated testing strategy caused by refusing to automate all the
+acceptance criteria in your scenarios. To be successful this requires
+a high degree of trust between testers and developers.
 
 Another thing I told to leave out of your scenario tests was
 comprehensive edge-case testing. There is a risk that this tactic will

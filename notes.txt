@@ -44,4 +44,3 @@ structure
 todo
  - what changes to the application design
  - remove acknowledgements slides
- - remove duplication between action -> scenario stuff and earlier exposition of where scenarios come from

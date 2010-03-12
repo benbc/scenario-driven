@@ -15,3 +15,5 @@ subscribe_jsp.*
 *_jsp.java
 *_jsp.class
 workspace/**/reports
+pebble/pebble-audit.log
+pebble/pebble.log

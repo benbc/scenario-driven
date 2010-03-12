@@ -263,13 +263,17 @@ The scenarios were roughly sketched out right at the beginning of the
 project, by Bethany and Cesar, before they drilled down into the
 features that would need to go into the application.
 
-[slide: team and scenarios]
+[slide: evolving scenarios]
 
-They've been used to guide the whole team since then: to help define
-and prioritize features, to ensure the team shares an understanding of
-what the application is for and, through their embodiment as automated
-tests, to ensure that the application really does support the
-activities it has been designed for.
+The process of developing an application can be framed in terms of
+elaboration of the application's scenarios. The identity of the
+scenarios remains roughly constant during development; new scenarios
+are only created if the direction of application development changes
+significantly, but their content evolves. That evolution, and the
+particular scenarios that are evolving, provide themes for the team
+during a project. "This iteration we are going to fill in the details
+of the recurring payments scenario." "This release focuses on
+improving the useability of the admin scenarios."
 
 *A story*
 
@@ -423,19 +427,6 @@ implement in the layer below.
 After that it's developers all the way down. The developers own the
 code in the application model and of course the application itself.
 
-[slide: terrence, developer and architecture]
-
-So during the development of a story, Delilah first pairs with
-Terrence to fill in the code under the scenario,
-
-[slide: developers and application model]
-
-then she pairs with Dave to finish the test code.
-
-[slide: developers and application]
-
-Finally they turn to the application code.
-
 Notice that as well as using the scenario to drive the functionality
 of the code that is being written, we are also using the test harness
 that underlies it to drive the details of the UI. For example we are
@@ -528,17 +519,38 @@ view. So perhaps the scenarios are the closest thing we have to a
 faithful projection of the essence (although of course we pay a price
 in the paucity of detail).
 
-[slide: evolving scenarios]
+Twist Demo
+----------
 
-The process of developing an application can be framed in terms of
-elaboration of the application's scenarios. The identity of the
-scenarios remains roughly constant during development; new scenarios
-are only created if the direction of application development changes
-significantly, but their content evolves. That evolution, and the
-particular scenarios that are evolving, provide themes for the team
-during a project. "This iteration we are going to fill in the details
-of the recurring payments scenario." "This release focuses on
-improving the useability of the admin scenarios."
+[slide: twist logo]
+
+Now I have talked to you at great length without showing you much in
+the way of working code. I don't think any half-way technical talk is
+complete without some live coding that might go wrong. So I'm going to
+show you ThoughtWorks Studios' refactoring IDE for tests, Twist -- and
+see if I can't screw something up for your entertainment.
+
+Twist is designed to allow just the kind of collaborative testing that
+I've been discussing today. It allows you to define scenarios in
+English and then maps the steps in the scenario workflow onto code
+automatically. In that respect it is close relative of Fitnesse. But
+it goes beyond that to provide the kind of intelligent editing and
+refactoring tools that we have come to expect from our IDEs.
+
+   - show scenario
+     - workflow
+     - context
+     - tags
+     - run (mention drivers)
+   - navigation
+   - add steps
+     - reuse
+     - unimplemented
+     - implement
+     - record
+   - refactoring
+     - extract concept
+     - rephrase
 
 Concerns
 --------
@@ -679,39 +691,6 @@ things. I would probably use some of the scenario test infrastructure
 to reduce the fragility of these tests, but their content would be
 purely owned by the testers and they wouldn't have the kind of
 semantic role that scenarios do.
-
-Twist Demo
-----------
-
-[slide: twist logo]
-
-Now I have talked to you at great length without showing you much in
-the way of working code. I don't think any half-way technical talk is
-complete without some live coding that might go wrong. So I'm going to
-show you ThoughtWorks Studios' refactoring IDE for tests, Twist -- and
-see if I can't screw something up for your entertainment.
-
-Twist is designed to allow just the kind of collaborative testing that
-I've been discussing today. It allows you to define scenarios in
-English and then maps the steps in the scenario workflow onto code
-automatically. In that respect it is close relative of Fitnesse. But
-it goes beyond that to provide the kind of intelligent editing and
-refactoring tools that we have come to expect from our IDEs.
-
-   - show scenario
-     - workflow
-     - context
-     - tags
-     - run (mention drivers)
-   - navigation
-   - add steps
-     - reuse
-     - unimplemented
-     - implement
-     - record
-   - refactoring
-     - extract concept
-     - rephrase
 
 Outro
 -----

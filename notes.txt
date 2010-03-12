@@ -42,4 +42,10 @@ structure
    - two things to remember
 
 todo
- - what changes to the application design
+
+checklist
+ - twist running
+ - project open
+ - pebbles running
+ - browser pointing at homepage, logged in
+ - impress running
